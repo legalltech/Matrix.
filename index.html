@@ -1,0 +1,2718 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Tags for Publishing -->
+    <title>Matrix Consult | Architects of Regulatory Compliance</title>
+    <meta name="description" content="Matrix Consult: Premium regulatory compliance consulting in Saudi Arabia. Specializing in SAMA, CMA, and SDAIA licensing with cutting-edge tech solutions.">
+    <meta name="keywords" content="Regulatory Compliance, Saudi Central Bank, SAMA, Capital Market Authority, CMA, SDAIA, Corporate Governance, Fintech, Saudi Arabia, Legal Tech">
+    <meta name="author" content="Matrix Consult">
+    
+    <!-- Open Graph / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://matrixconsult.sa/">
+    <meta property="og:title" content="Matrix Consult | Architects of Regulatory Compliance">
+    <meta property="og:description" content="Empowering highly complex financial and technological enterprises to enter the Saudi market with uncompromising regulatory precision.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0B1120/00E5FF?text=Matrix+Consult+|+Compliance+Architects">
+    
+    <!-- Favicon (SVG for high resolution) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+
+    <!-- Libraries & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Kufi+Arabic:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables - Premium Dark Theme */
+        :root {
+            --bg-base: #0B1120;      /* Ultra dark background from image */
+            --bg-surface: #111827;   /* Elevated surface */
+            --bg-surface-glass: rgba(11, 17, 32, 0.6);
+            --text-primary: #F9FAFB;   
+            --text-secondary: #9CA3AF; 
+            --accent-primary: #0077FF; 
+            --accent-glow: #00E5FF;
+            --border-color: rgba(255, 255, 255, 0.1); 
+            --border-highlight: rgba(255, 255, 255, 0.2);
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+        }
+
+        /* Improved Scrolling & Selection */
+        html { 
+            scroll-behavior: smooth; 
+            scroll-padding-top: 5rem;
+        }
+        
+        ::selection {
+            background-color: var(--accent-primary);
+            color: white;
+        }
+
+        /* Base Body */
+        body {
+            font-family: 'Inter', 'Noto Kufi Arabic', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 119, 255, 0.05), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(0, 229, 255, 0.05), transparent 25%);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-base); }
+        ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-primary); }
+
+        /* Typography Enhancements */
+        h1, h2, h3, h4, .logo-text {
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+        
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #ffffff, #9CA3AF);
+        }
+        .text-gradient-accent {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, var(--accent-primary), var(--accent-glow));
+        }
+
+        .container {
+            max-width: 85rem; margin: auto; padding: 0 1.5rem;
+            position: relative; z-index: 2;
+        }
+
+        #navbar {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 1px solid transparent;
+        }
+        #navbar.scrolled {
+            background-color: var(--bg-surface-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
+        
+        #main-nav a {
+            position: relative;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        #main-nav a:hover { color: var(--text-primary); }
+        #main-nav a::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -4px; left: 0; background: linear-gradient(90deg, var(--accent-primary), var(--accent-glow));
+            transition: width 0.3s ease; border-radius: 2px;
+        }
+        #main-nav a:hover::after { width: 100%; }
+        
+        /* Premium Buttons */
+        .cta-btn {
+            background: var(--accent-primary);
+            color: #FFFFFF;
+            font-weight: 500;
+            border-radius: 9999px;
+            padding: 0.75rem 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            background: #0055ff;
+        }
+
+        .cta-btn-secondary {
+            background: rgba(255,255,255,0.05);
+            color: var(--text-primary);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .cta-btn-secondary:hover {
+             background: rgba(255,255,255,0.1);
+        }
+
+        #hero-canvas-container {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0; cursor: grab; opacity: 1;
+        }
+        .cta-btn::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 119, 255, 0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+        }
+        .cta-btn:hover::before { left: 100%; }
+
+        .cta-btn-secondary {
+            background: rgba(255,255,255,0.03);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            box-shadow: none;
+        }
+        .cta-btn-secondary:hover {
+             background: rgba(255,255,255,0.08);
+             border-color: var(--border-highlight);
+             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #hero-canvas-container {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0; cursor: grab; opacity: 0.8;
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        }
+        #hero-canvas-container:active { cursor: grabbing; }
+
+        .animate-on-scroll {
+            opacity: 0; transform: translateY(30px) scale(0.98);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transition-delay: var(--delay, 0s);
+            will-change: opacity, transform;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1; transform: translateY(0) scale(1);
+        }
+
+        .bento-grid { display: grid; gap: 1.5rem; }
+        .bento-card {
+            background: var(--bg-surface-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+        .bento-card:hover { 
+            transform: translateY(-5px); 
+            border-color: rgba(255,255,255,0.2);
+            box-shadow: 0 20px 40px -10px rgba(0, 119, 255, 0.15);
+        }
+        /* Advanced Hover Glow Effect */
+        .bento-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: inherit; padding: 2px;
+            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(0, 229, 255, 0.3), transparent 40%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude;
+            opacity: 0; transition: opacity 0.5s; pointer-events: none;
+        }
+        .bento-card:hover::before { opacity: 1; }
+        
+        .bento-icon-wrapper {
+            width: 48px; height: 48px; border-radius: 12px;
+            background: linear-gradient(135deg, rgba(0,119,255,0.1), rgba(0,229,255,0.05));
+            border: 1px solid rgba(0,119,255,0.2);
+            display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;
+            color: var(--accent-glow);
+        }
+
+        .stat-number { font-size: 4rem; font-weight: 900; line-height: 1; margin-bottom: 0.5rem; }
+        
+        input, textarea, select {
+            background-color: rgba(0,0,0,0.2); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-primary);
+            transition: all 0.3s; padding: 1rem; backdrop-filter: blur(10px);
+        }
+        input:focus, textarea:focus, select:focus { 
+            outline: none; border-color: var(--accent-primary); 
+            box-shadow: 0 0 0 4px rgba(0, 119, 255, 0.15); background-color: rgba(0,0,0,0.4);
+        }
+        
+        /* Modal Design */
+        .modal-overlay { transition: opacity 0.4s ease; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .modal-content {
+            background: var(--bg-surface); border: 1px solid var(--border-highlight); color: var(--text-primary);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.05) inset; 
+            transform: scale(0.95) translateY(20px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 1.5rem;
+        }
+        .modal-overlay:not(.hidden) .modal-content { transform: scale(1) translateY(0); }
+        
+        .case-study-snapshot { 
+            margin-top: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.3); 
+            border-left: 4px solid var(--accent-primary); border-radius: 0 0.5rem 0.5rem 0; 
+        }
+
+        .portal {
+            position: fixed; inset: 0; z-index: 200; opacity: 0; visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            background-color: var(--bg-base);
+        }
+        .portal.active { opacity: 1; visibility: visible; }
+        .portal .portal-content { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); transform: translateY(30px) scale(0.98); }
+        .portal.active .portal-content { transform: translateY(0) scale(1); }
+        
+        .generic-results-container { 
+            background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-color); flex-grow: 1; overflow-y: auto; 
+        }
+        .generic-placeholder, .generic-loading { text-align: center; margin: auto; }
+        .generic-loading { display: none; }
+        .generic-content { display: none; }
+        
+        /* Spinner */
+        .spinner { 
+            width: 50px; height: 50px; border: 3px solid rgba(255,255,255,0.1); 
+            border-top-color: var(--accent-glow); border-radius: 50%; animation: spin 1s linear infinite; 
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        @property --angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+        
+        .package-card {
+            background: var(--bg-surface-glass); backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color); border-radius: 1.5rem;
+            transition: all 0.4s ease; display: flex; flex-direction: column;
+        }
+        .package-card.featured {
+            position: relative; border: none; background: var(--bg-surface);
+            transform: translateY(-1rem); box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        /* Rotating Border for Featured Package */
+        .package-card.featured::before {
+            content: ""; position: absolute; inset: -2px; border-radius: 1.6rem; z-index: -1;
+            background: conic-gradient(from var(--angle), var(--border-color) 0%, var(--accent-primary) 30%, var(--accent-glow) 50%, var(--border-color) 70%);
+            animation: spin 8s linear infinite;
+        }
+        .package-card.featured::after {
+            content: ""; position: absolute; inset: 1px; background: var(--bg-surface); border-radius: 1.4rem; z-index: -1;
+        }
+        .package-card.featured:hover { transform: translateY(-1.5rem); }
+        .featured-tag {
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-glow));
+            color: var(--bg-base); font-weight: 800; border: none; box-shadow: 0 4px 15px rgba(0,229,255,0.3);
+        }
+
+        .founder-card-wrapper {
+            position: relative; padding: 2px; border-radius: 1.75rem; overflow: hidden; background: transparent; transition: all 0.3s ease;
+        }
+        .founder-card-wrapper::before {
+            content: ''; position: absolute; top: 50%; left: 50%; width: 200%; height: 200%;
+            background: conic-gradient(from var(--angle), transparent 0%, rgba(0, 229, 255, 0.5) 20%, transparent 35%);
+            transform: translate(-50%, -50%) rotate(var(--angle)); animation: spin 5s linear infinite;
+            opacity: 0; transition: opacity 0.4s ease; pointer-events: none; z-index: 1;
+        }
+        .founder-card-wrapper:hover::before { opacity: 1; }
+        
+        .founder-card {
+            position: relative; z-index: 2; background: var(--bg-surface); border-radius: 1.6rem; width: 100%; height: 100%;
+            padding: 2.5rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; border: 1px solid var(--border-color);
+        }
+        .founder-image-wrapper { 
+            width: 8rem; height: 8rem; border-radius: 50%; overflow: hidden; margin-bottom: 1.5rem; 
+            border: 2px solid var(--border-color); padding: 4px; background: rgba(255,255,255,0.05);
+        }
+        .founder-image { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+        #chatbot-root {
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.05), 0 20px 40px rgba(0,0,0,0.5), 0 0 40px rgba(0, 119, 255, 0.1);
+        }
+        .chat-chip {
+            background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); color: var(--text-secondary);
+            transition: all 0.2s; cursor: pointer;
+        }
+        .chat-chip:hover { background: rgba(0, 119, 255, 0.1); border-color: var(--accent-primary); color: white; }
+        .typing-dot { animation: typingBounce 1.4s infinite ease-in-out both; }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes typingBounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+
+        /* View Switching Logic */
+        .main-view { transition: opacity 0.5s ease, transform 0.5s ease; will-change: transform, opacity; }
+        .hidden-view { opacity: 0; transform: scale(0.98); pointer-events: none; position: absolute; top: 0; left: 0; right: 0; z-index: -1; }
+
+        /* Dashboard Specifics */
+        .widget { background: rgba(17, 24, 39, 0.8); backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 1.5rem; padding: 1.5rem; display: flex; flex-direction: column; }
+        .kpi-value { font-size: 2.5rem; font-weight: 900; line-height: 1; }
+        
+        #back-to-top {
+            position: fixed; bottom: 2rem; right: 2rem; background: var(--accent-primary); color: white; width: 3.5rem; height: 3.5rem;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,119,255,0.4);
+            opacity: 0; visibility: hidden; transition: all 0.3s; transform: translateY(20px) scale(0.9); z-index: 100;
+        }
+        #back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+        #back-to-top:hover { transform: translateY(-5px) scale(1.1); }
+    </style>
+</head>
+<body class="bg-bg-base text-text-primary">
+
+<div id="investor-view" class="main-view">
+    <header id="navbar" class="fixed top-0 z-50 w-full py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#home" class="flex items-center gap-2 outline-none rounded-md" aria-label="Home">
+                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+                <span class="logo-text text-xl font-bold tracking-tight text-white">Matrix Consult</span>
+            </a>
+            <button id="mobile-menu-btn" class="md:hidden text-text-primary p-2 focus:outline-none" aria-label="Open Menu">
+                <svg id="hamburger-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                <svg id="close-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+            <nav id="main-nav" class="hidden md:flex items-center gap-8 text-xs lg:text-sm text-gray-300 font-medium">
+                <a href="#about" class="py-1">About Us</a>
+                <a href="#services" class="py-1">Expertise</a>
+                <a href="#our-team" class="py-1">Our Team</a>
+                <a href="#resources" class="py-1">Methodology</a>
+                <a href="#pulse" class="py-1">Legislative Pulse</a>
+                <a href="#packages" class="py-1">Packages</a>
+                <a href="#contact" class="py-1">Contact</a>
+                <button id="toggle-tools-view-btn" class="employee-only hidden text-xs font-bold uppercase tracking-wider text-accent-glow hover:text-white transition-colors py-1">Secure Portal <span class="ml-1 opacity-50">🔒</span></button>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-bg-surface/95 backdrop-blur-xl border-b border-border-color py-4 absolute w-full left-0 top-full shadow-2xl">
+            <ul class="flex flex-col items-center gap-6 text-lg font-medium">
+                 <li><a href="#about">About Us</a></li>
+                 <li><a href="#services">Expertise</a></li>
+                 <li><a href="#packages">Packages</a></li>
+                 <li><a href="#our-team">Leadership</a></li>
+                 <li><a href="#contact" class="text-accent-glow">Contact Us</a></li>
+                 <li><button id="toggle-tools-view-btn-mobile" class="employee-only hidden text-accent-glow text-sm uppercase tracking-widest mt-2 border border-accent-glow/30 px-6 py-2 rounded-full">Secure Portal</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+        <div id="hero-canvas-container"></div>
+        <div class="container relative z-10 pointer-events-none px-4">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 animate-on-scroll is-visible text-white leading-tight max-w-4xl mx-auto">
+                Your Strategic Partner for Regulatory<br>Compliance in Saudi Arabia
+            </h1>
+            <p class="text-sm md:text-base text-gray-400 mb-10 max-w-2xl mx-auto animate-on-scroll is-visible font-light leading-relaxed" style="--delay: 0.2s;">
+                Empowering companies to grow with regulatory confidence, enter the Saudi<br>
+                market with full compliance, strong governance, and an organizational structure<br>
+                capable of expansion and sustainability.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pointer-events-auto flex-wrap">
+                <a href="#packages" class="cta-btn w-full sm:w-auto animate-on-scroll is-visible" style="--delay: 0.4s;">Explore Investment Opportunities</a>
+                <button id="employee-portal-btn" class="cta-btn cta-btn-secondary w-full sm:w-auto animate-on-scroll is-visible" style="--delay: 0.6s;">Employee Portal</button>
+                <button id="enterprise-portal-btn" class="cta-btn w-full sm:w-auto animate-on-scroll is-visible !bg-transparent border border-accent-glow text-accent-glow hover:bg-accent-glow/10 mt-2 sm:mt-0" style="--delay: 0.8s;">
+                    <svg class="w-5 h-5 mr-2 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" /></svg> Enterprise Compliance OS
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="py-20 border-y border-border-color bg-black/20">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-border-color">
+                <div class="animate-on-scroll py-4" style="--delay: 0.1s;">
+                    <p class="stat-number text-gradient-accent" data-target="3">0</p>
+                    <h3 class="text-lg font-bold text-white uppercase tracking-wider">Core Authorities</h3>
+                    <p class="text-text-secondary mt-2 text-sm">Exclusive focus on SAMA, CMA & SDAIA.</p>
+                </div>
+                <div class="animate-on-scroll py-4" style="--delay: 0.2s;">
+                    <p class="stat-number text-gradient-accent"><span data-target="100">0</span>%</p>
+                    <h3 class="text-lg font-bold text-white uppercase tracking-wider">Compliance Integration</h3>
+                    <p class="text-text-secondary mt-2 text-sm">Built into business models from day one.</p>
+                </div>
+                <div class="animate-on-scroll py-4" style="--delay: 0.3s;">
+                    <p class="stat-number text-gradient-accent">24/7</p>
+                    <h3 class="text-lg font-bold text-white uppercase tracking-wider">Strategic Support</h3>
+                    <p class="text-text-secondary mt-2 text-sm">Continuous monitoring & audit readiness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 md:py-40 relative">
+        <!-- Background Glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6 animate-on-scroll text-white">Unparalleled <span class="text-gradient-accent">Expertise</span></h2>
+                <p class="text-xl text-text-secondary animate-on-scroll font-light" style="--delay: 0.2s;">Navigating the Kingdom's most rigorous regulatory landscapes with absolute certainty.</p>
+            </div>
+            
+            <div class="bento-grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+                <!-- SAMA -->
+                <div class="bento-card md:col-span-2 lg:col-span-2 animate-on-scroll" style="--delay: 0.2s;">
+                    <div class="bento-icon-wrapper">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Saudi Central Bank (SAMA)</h3>
+                    <p class="text-text-secondary leading-relaxed">Securing licenses for Financing, Payment Services, and Fintech. Architecting robust AML policies, enterprise risk management, and exhaustive cybersecurity frameworks.</p>
+                </div>
+                <!-- CMA -->
+                <div class="bento-card md:col-span-1 lg:col-span-2 animate-on-scroll" style="--delay: 0.3s;">
+                    <div class="bento-icon-wrapper">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">Capital Market Authority (CMA)</h3>
+                    <p class="text-text-secondary leading-relaxed">End-to-end enablement for Brokerage, Asset Management, and Crowdfunding platforms. Establishing institutional-grade governance structures.</p>
+                </div>
+                <!-- SDAIA -->
+                <div class="bento-card md:col-span-1 lg:col-span-1 animate-on-scroll" style="--delay: 0.4s;">
+                    <div class="bento-icon-wrapper">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286Z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">SDAIA & Data Privacy</h3>
+                    <p class="text-text-secondary text-sm">Strict adherence to PDPL, building comprehensive data protection programs and impact assessments.</p>
+                </div>
+                <!-- Governance -->
+                <div class="bento-card md:col-span-1 lg:col-span-1 animate-on-scroll" style="--delay: 0.5s;">
+                    <div class="bento-icon-wrapper">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.492-3.053c.24-.294.487-.587.734-.881L15.68 11M11.42 15.17l-4.14 4.141A2.652 2.652 0 0 1 3 15.55l4.141-4.139M15.68 11.001A2.65 2.65 0 0 0 11.93 7.25m3.75 3.751c-.24-.294-.487-.587-.734-.881L11.93 7.25m0 0L7.79 3.109a2.65 2.65 0 0 0-3.75 3.751L7.14 11m4.79-3.751-.734-.881" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Inspection Readiness</h3>
+                    <p class="text-text-secondary text-sm">Rigorous mock audits preparing institutions for systematic regulatory inspections.</p>
+                </div>
+                <!-- Tech Edge -->
+                <div class="bento-card md:col-span-2 lg:col-span-2 animate-on-scroll" style="--delay: 0.6s; background: linear-gradient(135deg, rgba(0,119,255,0.05) 0%, rgba(0,0,0,0.2) 100%);">
+                     <div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
+                         <div class="flex-grow">
+                             <h3 class="text-2xl font-bold mb-3 text-white">The Technological Edge (RegTech)</h3>
+                             <p class="text-text-secondary mb-4">Leveraging proprietary AI models to automate policy generation, contract risk analysis, and continuous compliance monitoring via a secure client portal.</p>
+                             <span class="text-xs font-bold uppercase tracking-widest text-accent-glow">Exclusive to Partners</span>
+                         </div>
+                         <div class="w-20 h-20 flex-shrink-0 bg-accent-primary/10 rounded-2xl border border-accent-primary/30 flex items-center justify-center text-accent-glow relative overflow-hidden">
+                             <div class="absolute inset-0 bg-gradient-to-tr from-accent-primary to-transparent opacity-20"></div>
+                             <svg class="w-10 h-10 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" /></svg>
+                         </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="smart-advisor-cta" class="py-24 md:py-32 relative overflow-hidden border-y border-white/5 bg-black/40">
+        <div class="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSI+PC9yZWN0Pgo8Y2lyY2xlIGN4PSIyIiBjeT0iMiIgcj0iMSIgZmlsbD0iI2ZmZiI+PC9jaXJjbGU+Cjwvc3ZnPg==')]"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="text-left animate-on-scroll">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent-primary/10 border border-accent-primary/30 text-accent-glow text-xs font-bold uppercase tracking-wider mb-6">
+                        <span class="relative flex h-2.5 w-2.5">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-glow opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent-glow"></span>
+                        </span>
+                        Enterprise Knowledge Base
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-white leading-tight">Consult the <br><span class="text-gradient-accent">Matrix Oracle</span></h2>
+                    <p class="text-lg text-text-secondary mb-8 font-light leading-relaxed">
+                        Experience the precision of our regulatory knowledge engine. Vetted across Saudi Arabian regulatory frameworks (SAMA, CMA, SDAIA), it delivers structured, authoritative, and actionable operational insights.
+                    </p>
+                    <ul class="space-y-4 text-sm text-gray-300 font-medium">
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-5 h-5 rounded-full bg-success-color/20 flex items-center justify-center flex-shrink-0 text-success-color"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></div>
+                            Deterministic regulatory mapping and requirements analysis.
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-5 h-5 rounded-full bg-success-color/20 flex items-center justify-center flex-shrink-0 text-success-color"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></div>
+                            Continuously aligned with the latest SAMA, CMA and SDAIA directives.
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="relative animate-on-scroll" style="--delay: 0.2s;">
+                    <!-- Decorative back glow -->
+                    <div class="absolute -inset-1 bg-gradient-to-r from-accent-primary to-cyan-500 rounded-[2rem] blur-xl opacity-30 animate-pulse"></div>
+                    
+                    <div id="chatbot-root" class="relative w-full h-[600px] bg-bg-surface rounded-3xl overflow-hidden flex flex-col font-sans border border-white/10">
+                        <header class="bg-white/5 backdrop-blur-md p-5 border-b border-white/5 flex justify-between items-center z-10">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-accent-primary to-cyan-400 p-[1px]">
+                                    <div class="w-full h-full bg-bg-surface rounded-2xl flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-accent-glow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h1 class="font-bold text-white tracking-wide">Matrix Oracle</h1>
+                                    <div class="flex items-center gap-2 mt-0.5">
+                                        <span class="w-2 h-2 rounded-full bg-success-color shadow-[0_0_8px_#10b981]"></span>
+                                        <p class="text-xs text-text-secondary font-medium uppercase tracking-wider">Oracle Active</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+                        <main id="chat-messages-container" class="flex-1 overflow-y-auto p-6 scrollbar-thin flex flex-col gap-5">
+                            <!-- Messages injected via JS -->
+                        </main>
+                        <div class="p-5 bg-black/40 backdrop-blur-md border-t border-white/5">
+                            <!-- Fixed Suggestion Row: Always active and scrolling cleanly -->
+                            <div id="chat-suggestions" class="flex gap-2 overflow-x-auto pb-4 no-scrollbar mb-1">
+                                <button class="chat-chip text-xs px-4 py-2 rounded-xl whitespace-nowrap" data-topic="bnpl">BNPL Requirements (SAMA)</button>
+                                <button class="chat-chip text-xs px-4 py-2 rounded-xl whitespace-nowrap" data-topic="pdpl">PDPL Compliance Steps</button>
+                                <button class="chat-chip text-xs px-4 py-2 rounded-xl whitespace-nowrap" data-topic="realestate">Setting up a Real Estate Fund</button>
+                                <button class="chat-chip text-xs px-4 py-2 rounded-xl whitespace-nowrap" data-topic="fees">Fees and Penalties</button>
+                                <button class="chat-chip text-xs px-4 py-2 rounded-xl whitespace-nowrap" data-topic="csf">SAMA Cyber Security (CSF) Checklist</button>
+                            </div>
+                            <div class="flex items-center gap-3 relative">
+                                <input type="text" id="chat-input" placeholder="Query the Oracle..." class="flex-1 w-full pl-5 pr-12 py-4 text-white bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-accent-primary focus:bg-white/10 transition-all placeholder-gray-500 font-light" autocomplete="off">
+                                <button id="chat-send-btn" class="absolute right-2 p-2.5 bg-accent-primary text-white rounded-xl hover:bg-blue-500 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages" class="py-24 md:py-40">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6 animate-on-scroll">Investment <span class="text-gradient-accent">Partnerships</span></h2>
+            <p class="text-xl text-text-secondary max-w-2xl mx-auto mb-20 animate-on-scroll font-light" style="--delay: 0.2s;">
+                Tiered consulting frameworks engineered to align with your organization's growth trajectory and regulatory exposure.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 max-w-7xl mx-auto items-center">
+                <!-- Foundation -->
+                <div class="package-card p-8 lg:p-10 animate-on-scroll text-left" style="--delay: 0.4s;">
+                    <h3 class="text-2xl font-bold text-white mb-2">Foundation</h3>
+                    <p class="text-text-secondary mb-8 text-sm h-10">For entities initiating the licensing journey.</p>
+                    <ul class="space-y-4 mb-10 flex-grow text-sm font-medium text-gray-300">
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-accent-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Initial Readiness Audit</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-accent-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Strategic Licensing Roadmap</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-accent-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Basic Advisory Support</li>
+                    </ul>
+                    <a href="#contact" class="cta-btn cta-btn-secondary w-full">Request Proposal</a>
+                </div>
+
+                <!-- Featured -->
+                <div class="package-card featured p-8 lg:p-12 animate-on-scroll text-left" style="--delay: 0.2s;">
+                    <p class="featured-tag text-xs uppercase tracking-widest rounded-full px-4 py-1.5 absolute -top-4 left-1/2 -translate-x-1/2">Strategic Partner</p>
+                    <h3 class="text-3xl font-bold text-white mb-2">Comprehensive</h3>
+                    <p class="text-accent-glow mb-8 text-sm h-10">End-to-end execution from audit to post-license operation.</p>
+                    <ul class="space-y-5 mb-10 flex-grow text-sm font-semibold text-white">
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-accent-glow shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>Full License File Construction</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-accent-glow shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>Governance & Policy Architecture</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-accent-glow shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>Tech Infrastructure Validation</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-accent-glow shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>Regulator Inspection Simulation</li>
+                    </ul>
+                    <a href="#contact" class="cta-btn w-full !text-base">Engage Now</a>
+                </div>
+                
+                <!-- Support -->
+                <div class="package-card p-8 lg:p-10 animate-on-scroll text-left" style="--delay: 0.6s;">
+                     <h3 class="text-2xl font-bold text-white mb-2">Continuity</h3>
+                    <p class="text-text-secondary mb-8 text-sm h-10">For licensed entities requiring perpetual compliance assurance.</p>
+                    <ul class="space-y-4 mb-10 flex-grow text-sm font-medium text-gray-300">
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-accent-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Continuous Monitoring (RegTech)</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-accent-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Real-time Regulatory Updates</li>
+                        <li class="flex items-start gap-3"><svg class="w-5 h-5 text-accent-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Periodic Internal Audits</li>
+                    </ul>
+                    <a href="#contact" class="cta-btn cta-btn-secondary w-full">Request Proposal</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="our-team" class="py-24 md:py-40 bg-white/5 border-t border-white/5">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 animate-on-scroll text-white">Our <span class="text-gradient-accent">Leadership</span></h2>
+            <p class="text-xl text-text-secondary max-w-2xl mx-auto mb-20 animate-on-scroll font-light" style="--delay: 0.2s;">Elite architects of law and technology, shaping the future of Saudi compliance.</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                <div class="founder-card-wrapper animate-on-scroll" style="--delay: 0.3s;">
+                    <div class="founder-card">
+                        <div class="founder-image-wrapper"><img src="https://placehold.co/200x200/111827/FFFFFF?text=WA" alt="Wateen Alsufyani" class="founder-image" loading="lazy"></div>
+                        <h3 class="text-2xl font-bold text-white mb-1">Wateen Alsufyani</h3>
+                        <p class="text-sm font-medium text-text-secondary uppercase tracking-widest">Founding Partner</p>
+                        <p class="text-accent-glow text-sm font-bold mt-2 bg-accent-primary/10 px-3 py-1 rounded-full border border-accent-primary/20 inline-block">Legal Tech Expert</p>
+                        <div class="mt-8 pt-6 border-t border-white/10 w-full text-sm text-gray-400 space-y-2">
+                            <p>LL.B., King Abdulaziz University</p>
+                            <a href="https://www.linkedin.com/in/wateen-alsufyani-291b332b1" target="_blank" class="inline-flex items-center gap-1 text-white hover:text-accent-glow transition-colors mt-4">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg> LinkedIn Connect
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="founder-card-wrapper animate-on-scroll" style="--delay: 0.4s;">
+                    <div class="founder-card">
+                        <div class="founder-image-wrapper"><img src="https://placehold.co/200x200/111827/FFFFFF?text=RH" alt="Rana Alharbi" class="founder-image" loading="lazy"></div>
+                        <h3 class="text-2xl font-bold text-white mb-1">Rana Alharbi</h3>
+                        <p class="text-sm font-medium text-text-secondary uppercase tracking-widest">Founding Partner</p>
+                        <div class="mt-8 pt-6 border-t border-white/10 w-full text-sm text-gray-400 space-y-2">
+                            <p>LL.B., Qassim University</p>
+                            <a href="https://linkedin.com/in/rana-alharbi5" target="_blank" class="inline-flex items-center gap-1 text-white hover:text-accent-glow transition-colors mt-4">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg> LinkedIn Connect
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="founder-card-wrapper animate-on-scroll" style="--delay: 0.5s;">
+                    <div class="founder-card">
+                        <div class="founder-image-wrapper"><img src="https://placehold.co/200x200/111827/FFFFFF?text=SA" alt="Sara Almashali" class="founder-image" loading="lazy"></div>
+                        <h3 class="text-2xl font-bold text-white mb-1">Sara Almashali</h3>
+                        <p class="text-sm font-medium text-text-secondary uppercase tracking-widest">Founding Partner</p>
+                        <div class="mt-8 pt-6 border-t border-white/10 w-full text-sm text-gray-400 space-y-2">
+                            <p>LL.B., King Saud University</p>
+                            <a href="https://www.linkedin.com/in/sara-almashali-841655260" target="_blank" class="inline-flex items-center gap-1 text-white hover:text-accent-glow transition-colors mt-4">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg> LinkedIn Connect
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 md:py-40 relative">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="bg-bg-surface-glass backdrop-blur-2xl border border-white/10 rounded-[2.5rem] p-8 md:p-16 shadow-2xl max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="animate-on-scroll">
+                        <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-white leading-tight">Initiate <span class="text-gradient-accent">Dialogue</span></h2>
+                        <p class="text-lg text-text-secondary mb-8 font-light">Whether structuring a Fintech startup or auditing an enterprise, secure your compliance foundation today.</p>
+                        <div class="space-y-4">
+                            <a href="mailto:contact@matrixconsult.sa" class="flex items-center gap-4 text-text-secondary hover:text-white transition-colors"><svg class="w-6 h-6 text-accent-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg> contact@matrixconsult.sa</a>
+                            <div class="flex items-center gap-4 text-text-secondary"><svg class="w-6 h-6 text-accent-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg> Riyadh & Jeddah, Saudi Arabia</div>
+                        </div>
+                    </div>
+                    <div class="animate-on-scroll" style="--delay: 0.2s;">
+                        <form id="service-request-form" action="#" method="POST" class="space-y-5">
+                            <div><select name="service" required class="w-full text-sm"><option value="" disabled selected>Select Engagement Type...</option><option value="SAMA">SAMA Licensing</option><option value="CMA">CMA Authorization</option><option value="SDAIA">SDAIA/PDPL Compliance</option><option value="Audit">Mock Inspection & Audit</option></select></div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5"><input type="text" name="name" placeholder="Full Name" required class="w-full text-sm"><input type="email" name="email" placeholder="Corporate Email" required class="w-full text-sm"></div>
+                            <div><textarea rows="4" name="message" placeholder="Briefly describe your objective..." required class="w-full text-sm"></textarea></div>
+                            <button type="submit" class="cta-btn w-full mt-2">Submit Inquiry</button>
+                        </form>
+                        <div id="success-message" class="hidden mt-4 p-4 bg-success-color/10 text-success-color border border-success-color/20 rounded-xl text-center text-sm font-medium">Inquiry received. A senior partner will contact you shortly.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="py-12 border-t border-white/5 bg-black">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                 <svg class="h-6 w-6 text-white" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 6L42 16.5V37.5L24 44L6 37.5V16.5L24 6Z" fill="#0077FF" fill-opacity="0.5"/><path d="M15 22L24 27.5L33 22" stroke="#00E5FF" stroke-width="2"/><path d="M24 44V27.5" stroke="#00E5FF" stroke-width="2"/></svg>
+                 <span class="font-bold text-white tracking-tight">Matrix Consult</span>
+            </div>
+            <p class="text-sm text-text-secondary font-light">&copy; 2026 Matrix Consult. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+
+<div id="tools-view" class="main-view hidden-view bg-bg-base min-h-screen">
+    <header class="sticky top-0 z-50 w-full py-4 bg-bg-surface/80 backdrop-blur-xl border-b border-border-color shadow-2xl">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                 <div class="w-10 h-10 bg-accent-primary/20 rounded-xl flex items-center justify-center border border-accent-primary/30">
+                    <svg class="h-6 w-6 text-accent-glow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                 </div>
+                <span class="text-xl font-bold tracking-tight">Matrix<span class="text-accent-glow">OS</span></span>
+            </div>
+            <button id="toggle-investor-view-btn" class="text-sm font-medium text-text-secondary hover:text-white transition-colors flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                Exit Portal
+            </button>
+        </div>
+    </header>
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-2">Workspace Overview</h2>
+            <p class="text-text-secondary mb-12 text-sm">Internal proprietary tools for accelerated compliance operations.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Sidebar -->
+                <div class="lg:col-span-4 space-y-3" id="tool-list">
+                    <!-- Injected via JS -->
+                </div>
+                <!-- Main Display -->
+                <div class="lg:col-span-8">
+                    <div id="tool-display" class="bg-bg-surface/50 border border-white/5 p-10 rounded-3xl sticky top-28 shadow-2xl backdrop-blur-sm"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Enterprise Dashboard View (New Integrated System) -->
+<div id="enterprise-dashboard-view" class="main-view hidden-view bg-bg-base min-h-screen flex flex-col md:flex-row z-50">
+    <!-- Sidebar -->
+    <aside class="w-full md:w-72 bg-bg-surface/80 backdrop-blur-xl border-r border-border-color flex flex-col h-auto md:h-screen sticky top-0">
+        <div class="p-6 border-b border-border-color flex items-center justify-between md:justify-start gap-3">
+            <div class="w-10 h-10 bg-accent-primary/20 rounded-xl flex items-center justify-center border border-accent-primary/30">
+                <svg class="h-6 w-6 text-accent-glow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div>
+                <h1 class="text-lg font-bold tracking-tight text-white leading-tight">Compliance <span class="text-accent-glow">OS</span></h1>
+                <p class="text-[10px] text-text-secondary uppercase tracking-widest">Enterprise Edition</p>
+            </div>
+            <button id="exit-enterprise-btn" class="md:hidden text-text-secondary hover:text-white p-2">&times;</button>
+        </div>
+        
+        <nav class="flex-1 p-4 space-y-2 overflow-y-auto hidden md:block" id="os-sidebar-nav">
+            <div class="text-xs font-semibold text-text-secondary uppercase tracking-widest mb-4 px-2 mt-4">Command Center</div>
+            <button data-target="os-overview" class="os-nav-btn w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl bg-accent-primary/10 text-accent-glow border border-accent-primary/20 transition-all font-medium">
+                <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg> Overview Dashboard
+            </button>
+            <button data-target="os-policies" class="os-nav-btn w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl text-text-secondary hover:bg-white/5 hover:text-white border border-transparent transition-all font-medium">
+                <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg> Regulatory Policies
+            </button>
+            <button data-target="os-risk" class="os-nav-btn w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl text-text-secondary hover:bg-white/5 hover:text-white border border-transparent transition-all font-medium">
+                <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg> Risk Heatmap
+            </button>
+            <button data-target="os-audit" class="os-nav-btn w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl text-text-secondary hover:bg-white/5 hover:text-white border border-transparent transition-all font-medium">
+                <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg> Audit Readiness
+            </button>
+        </nav>
+        
+        <div class="p-6 border-t border-border-color hidden md:block">
+            <div class="bg-black/30 rounded-xl p-4 border border-white/5">
+                <p class="text-xs text-text-secondary mb-1">Assigned Auditor</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-accent-primary/20 flex items-center justify-center text-accent-glow font-bold text-xs">MC</div>
+                    <p class="text-sm text-white font-medium">Matrix Consult Partner</p>
+                </div>
+            </div>
+            <button id="exit-enterprise-btn-desktop" class="w-full mt-4 text-xs font-medium text-text-secondary hover:text-white transition-colors flex items-center justify-center gap-2 py-2">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg> Exit System
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Dashboard Area -->
+    <main class="flex-1 overflow-y-auto h-screen scrollbar-thin bg-black/40 relative">
+        <header class="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/5 bg-bg-surface-glass backdrop-blur-md sticky top-0 z-10">
+            <div>
+                <h2 id="os-header-title" class="text-2xl md:text-3xl font-extrabold text-white">Fintech Subsidiary <span class="text-text-secondary font-light">| Readiness Board</span></h2>
+                <p id="os-header-desc" class="text-sm text-text-secondary mt-1">Live tracking of SAMA & SDAIA regulatory implementation.</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="open-sandbox-btn" class="cta-btn !bg-cyan-500 hover:!bg-cyan-600 text-bg-base font-bold text-xs px-4 py-2 rounded-xl flex items-center gap-2 animate-pulse shadow-[0_0_15px_rgba(0,229,255,0.4)]">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    <span>Simulation Sandbox</span>
+                </button>
+                <div class="text-right hidden sm:block">
+                    <p class="text-xs text-text-secondary uppercase tracking-wider mb-1">System Status</p>
+                    <div class="flex items-center gap-2 justify-end">
+                        <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-success-color opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-success-color"></span></span>
+                        <span id="os-status-indicator" class="text-success-color font-bold text-sm">Fully Compliant</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="p-6 md:p-8 relative">
+            
+            <!-- VIEW 1: Overview (Original Dashboard) -->
+            <div id="os-overview" class="os-content-view block space-y-8 animate-on-scroll is-visible">
+                <!-- KPIs -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-bg-surface border border-border-color rounded-2xl p-5 shadow-xl relative overflow-hidden">
+                        <div class="absolute -right-4 -top-4 w-16 h-16 bg-accent-primary/10 rounded-full blur-xl"></div>
+                        <p class="text-text-secondary text-sm font-medium mb-1">Overall Readiness</p>
+                        <div class="flex items-end gap-3"><h3 id="kpi-readiness" class="text-4xl font-black text-white">94<span class="text-2xl text-text-secondary">%</span></h3><span class="text-success-color text-sm font-bold flex items-center mb-1"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg> Live</span></div>
+                    </div>
+                    <div class="bg-bg-surface border border-border-color rounded-2xl p-5 shadow-xl relative overflow-hidden">
+                        <div class="absolute -right-4 -top-4 w-16 h-16 bg-danger-color/10 rounded-full blur-xl"></div>
+                        <p class="text-text-secondary text-sm font-medium mb-1">Critical Vulnerabilities</p>
+                        <div class="flex items-end gap-3"><h3 id="kpi-vulnerabilities" class="text-4xl font-black text-white">0</h3><span class="text-text-secondary text-sm font-medium mb-1">Resolved</span></div>
+                    </div>
+                    <div class="bg-bg-surface border border-border-color rounded-2xl p-5 shadow-xl relative overflow-hidden">
+                        <div class="absolute -right-4 -top-4 w-16 h-16 bg-warning-color/10 rounded-full blur-xl"></div>
+                        <p class="text-text-secondary text-sm font-medium mb-1">Open NCA Controls</p>
+                        <div class="flex items-end gap-3"><h3 id="kpi-nca" class="text-4xl font-black text-white">12</h3><span class="text-warning-color text-sm font-bold flex items-center mb-1">Action Req.</span></div>
+                    </div>
+                    <div class="bg-bg-surface border border-border-color rounded-2xl p-5 shadow-xl relative overflow-hidden">
+                        <div class="absolute -right-4 -top-4 w-16 h-16 bg-accent-glow/10 rounded-full blur-xl"></div>
+                        <p class="text-text-secondary text-sm font-medium mb-1">Days to SAMA Submission</p>
+                        <div class="flex items-end gap-3"><h3 id="kpi-days" class="text-4xl font-black text-white">18</h3><span class="text-text-secondary text-sm font-medium mb-1">On Track</span></div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-bg-surface border border-border-color rounded-2xl p-6 shadow-xl">
+                        <h3 class="text-lg font-bold text-white mb-6">Compliance Evolution Index</h3>
+                        <div class="relative h-64 w-full">
+                            <canvas id="complianceTrendChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-bg-surface border border-border-color rounded-2xl p-6 shadow-xl flex flex-col">
+                        <h3 class="text-lg font-bold text-white mb-2">Framework Saturation</h3>
+                        <p class="text-xs text-text-secondary mb-4">Completion percentage per regulatory body</p>
+                        <div class="relative flex-1 w-full min-h-[200px] flex items-center justify-center">
+                            <canvas id="frameworkStatusChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audit Trail Table -->
+                <div class="bg-bg-surface border border-border-color rounded-2xl shadow-xl overflow-hidden">
+                    <div class="p-6 border-b border-border-color flex justify-between items-center bg-black/20">
+                        <h3 class="text-lg font-bold text-white">Live Audit Trail & Remediation</h3>
+                        <span class="text-xs text-cyan-400 font-bold tracking-wide uppercase">Realtime Stream active</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-black/40 text-text-secondary text-xs uppercase tracking-wider">
+                                    <th class="p-4 font-medium">Control ID</th>
+                                    <th class="p-4 font-medium">Framework</th>
+                                    <th class="p-4 font-medium">Description</th>
+                                    <th class="p-4 font-medium">Status</th>
+                                    <th class="p-4 font-medium">Timestamp</th>
+                                </tr>
+                            </thead>
+                            <tbody id="audit-trail-rows" class="text-sm divide-y divide-border-color">
+                                <!-- Dynamic audit rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIEW 2: Regulatory Policies -->
+            <div id="os-policies" class="os-content-view hidden space-y-6">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xl font-bold text-white">Policy Documentation Hub</h3>
+                    <button id="add-policy-trigger" class="cta-btn text-xs py-2">Generate New Policy +</button>
+                </div>
+                <div id="policies-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Policy cards rendered dynamically -->
+                </div>
+            </div>
+
+            <!-- VIEW 3: Risk Heatmap -->
+            <div id="os-risk" class="os-content-view hidden space-y-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <!-- Matrix -->
+                    <div class="lg:col-span-5 bg-bg-surface border border-border-color rounded-2xl p-6 shadow-xl flex flex-col">
+                        <h3 class="text-lg font-bold text-white mb-6">Inherent Risk Matrix</h3>
+                        <div class="relative flex-1 flex">
+                            <!-- Y-Axis Label -->
+                            <div class="flex flex-col justify-center items-center mr-4 w-6">
+                                <span class="transform -rotate-90 text-xs font-bold tracking-widest text-text-secondary whitespace-nowrap">LIKELIHOOD</span>
+                            </div>
+                            <!-- Grid -->
+                            <div class="flex-1 grid grid-cols-3 grid-rows-3 gap-2 h-64">
+                                <!-- Top Row (High Likelihood: 3) -->
+                                <div id="cell-3-1" class="bg-warning-color/10 border border-white/5 rounded-lg flex flex-col items-center justify-center text-warning-color font-bold text-lg relative group transition-all">
+                                    <span class="count-val">0</span>
+                                    <div class="text-[10px] opacity-40">L3/I1</div>
+                                </div>
+                                <div id="cell-3-2" class="bg-danger-color/20 border border-danger-color/30 rounded-lg flex flex-col items-center justify-center text-danger-color font-bold text-lg relative group cursor-pointer transition-all">
+                                    <span class="count-val">0</span>
+                                    <div class="text-[10px] opacity-40">L3/I2</div>
+                                </div>
+                                <div id="cell-3-3" class="bg-danger-color/40 border border-danger-color/50 rounded-lg flex flex-col items-center justify-center text-white font-bold text-lg relative group cursor-pointer transition-all">
+                                    <span class="count-val">0</span>
+                                    <div class="text-[10px] opacity-40">L3/I3</div>
+                                </div>
+                                
+                                <!-- Middle Row (Med Likelihood: 2) -->
+                                <div id="cell-2-1" class="bg-success-color/10 border border-white/5 rounded-lg flex flex-col items-center justify-center text-success-color font-bold text-lg relative group transition-all">
+                                    <span class="count-val">0</span>
+                                    <div class="text-[10px] opacity-40">L2/I1</div>
+                                </div>
+                                <div id="cell-2-2" class="bg-warning-color/20 border border-warning-color/30 rounded-lg flex flex-col items-center justify-center text-warning-color font-bold text-lg relative group cursor-pointer transition-all">
+                                    <span class="count-val">0</span>
+                                    <div class="text-[10px] opacity-40">L2/I2</div>
+                                </div>
+                                <div id="cell-2-3" class="bg-danger-color/25 border border-danger-color/30 rounded-lg flex flex-col items-center justify-center text-danger-color font-bold text-lg relative group cursor-pointer transition-all">
+                                    <span class="count-val">0</span>
+                                    <div class="text-[10px] opacity-40">L2/I3</div>
+                                </div>
+                                
+                                <!-- Bottom Row (Low Likelihood: 1) -->
+                                <div id="cell-1-1" class="bg-success-color/5 border border-white/5 rounded-lg flex flex-col items-center justify-center text-success-color/60 font-bold text-lg relative group transition-all">
+                                    <span class="count-val">0</span>
+                                    <div class="text-[10px] opacity-40">L1/I1</div>
+                                </div>
+                                <div id="cell-1-2" class="bg-success-color/10 border border-white/5 rounded-lg flex flex-col items-center justify-center text-success-color font-bold text-lg relative group cursor-pointer transition-all">
+                                    <span class="count-val">0</span>
+                                    <div class="text-[10px] opacity-40">L1/I2</div>
+                                </div>
+                                <div id="cell-1-3" class="bg-warning-color/10 border border-white/5 rounded-lg flex flex-col items-center justify-center text-warning-color font-bold text-lg relative group cursor-pointer transition-all">
+                                    <span class="count-val">0</span>
+                                    <div class="text-[10px] opacity-40">L1/I3</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- X-Axis Label -->
+                        <div class="flex justify-center mt-4 ml-10">
+                            <span class="text-xs font-bold tracking-widest text-text-secondary uppercase">IMPACT</span>
+                        </div>
+                    </div>
+
+                    <!-- Risk Register -->
+                    <div class="lg:col-span-7 bg-bg-surface border border-border-color rounded-2xl shadow-xl overflow-hidden flex flex-col">
+                        <div class="p-5 border-b border-white/5 bg-black/20 flex justify-between items-center">
+                            <h3 class="text-lg font-bold text-white">Enterprise Risk Registry</h3>
+                            <button id="add-risk-trigger" class="text-xs font-bold text-cyan-400 hover:text-white uppercase tracking-wider bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">Add Custom Risk +</button>
+                        </div>
+                        <div id="risks-register-container" class="p-5 overflow-y-auto flex-1 space-y-4 max-h-[400px]">
+                            <!-- Dynamic Risk cards render here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIEW 4: Audit Readiness -->
+            <div id="os-audit" class="os-content-view hidden space-y-6">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="lg:col-span-2 space-y-6">
+                        <div class="bg-bg-surface border border-border-color rounded-2xl p-6 shadow-xl">
+                            <h3 class="text-lg font-bold text-white mb-6">Framework Implementation Progress</h3>
+                            
+                            <div class="space-y-6">
+                                <!-- Progress 1 -->
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span class="font-bold text-white">SAMA Fintech Licensing Requirements</span>
+                                        <span id="progress-text-sama" class="text-accent-glow font-bold">92%</span>
+                                    </div>
+                                    <div class="w-full bg-white/5 rounded-full h-2.5 border border-white/10 overflow-hidden">
+                                        <div id="progress-bar-sama" class="bg-accent-primary h-2.5 rounded-full shadow-[0_0_10px_#0077FF] transition-all duration-500" style="width: 92%"></div>
+                                    </div>
+                                </div>
+                                <!-- Progress 2 -->
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span class="font-bold text-white">SDAIA PDPL Compliance</span>
+                                        <span id="progress-text-sdaia" class="text-success-color font-bold">85%</span>
+                                    </div>
+                                    <div class="w-full bg-white/5 rounded-full h-2.5 border border-white/10 overflow-hidden">
+                                        <div id="progress-bar-sdaia" class="bg-success-color h-2.5 rounded-full shadow-[0_0_10px_#10b981] transition-all duration-500" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <!-- Progress 3 -->
+                                <div>
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span class="font-bold text-white">NCA Essential Cybersecurity Controls (ECC)</span>
+                                        <span id="progress-text-nca" class="text-warning-color font-bold">68%</span>
+                                    </div>
+                                    <div class="w-full bg-white/5 rounded-full h-2.5 border border-white/10 overflow-hidden">
+                                        <div id="progress-bar-nca" class="bg-warning-color h-2.5 rounded-full shadow-[0_0_10px_#f59e0b] transition-all duration-500" style="width: 68%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Items Table -->
+                        <div class="bg-bg-surface border border-border-color rounded-2xl shadow-xl overflow-hidden">
+                            <div class="p-5 border-b border-white/5 bg-black/20 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                                <h3 class="text-lg font-bold text-white">Critical Remediation Tasks</h3>
+                                <p class="text-xs text-text-secondary">Task activation instantly updates readiness metrics</p>
+                            </div>
+                            <table class="w-full text-left">
+                                <tbody id="remediation-tasks-rows" class="text-sm divide-y divide-border-color">
+                                    <!-- Dynamic tasks with checkboxes -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Milestone Widget -->
+                    <div class="bg-bg-surface border border-border-color rounded-2xl p-6 shadow-xl relative overflow-hidden flex flex-col justify-center items-center text-center">
+                        <div class="absolute inset-0 bg-gradient-to-b from-accent-primary/10 to-transparent pointer-events-none"></div>
+                        <div class="w-20 h-20 border-4 border-accent-glow/30 rounded-full flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(0,229,255,0.2)]">
+                            <svg class="w-8 h-8 text-accent-glow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Next Milestone</h3>
+                        <p id="milestone-title" class="text-sm text-text-secondary mb-6">SAMA Pre-Operational Mock Audit</p>
+                        <div id="milestone-days" class="text-5xl font-black text-white tracking-tighter mb-2">14 <span class="text-xl text-text-secondary font-medium tracking-normal">Days</span></div>
+                        <p id="milestone-date" class="text-xs text-text-secondary uppercase tracking-widest font-bold">Target: Nov 15, 2026</p>
+                        <button id="edit-milestone-trigger" class="cta-btn w-full mt-8 text-sm !bg-white/10 !text-white border border-white/20 hover:!bg-white/20">Edit Milestone Target</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pb-10"></div>
+        </div>
+    </main>
+</div>
+
+<!-- Sliding Interactive Simulation Sandbox Drawer -->
+<div id="sandbox-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[480px] bg-bg-surface/95 border-l border-white/10 shadow-2xl z-[300] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col backdrop-blur-2xl">
+    <div class="p-6 border-b border-white/10 flex justify-between items-center bg-black/40">
+        <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-cyan-400 animate-ping"></span>
+            <h3 class="font-bold text-white text-lg">Interactive Sandbox</h3>
+        </div>
+        <button id="close-sandbox-btn" class="text-text-secondary hover:text-white text-2xl">&times;</button>
+    </div>
+    <div class="flex-1 overflow-y-auto p-6 space-y-8 scrollbar-thin">
+        
+        <!-- Live Alert Note -->
+        <div class="p-4 bg-cyan-500/10 border border-cyan-400/30 rounded-xl">
+            <p class="text-xs text-cyan-300 leading-relaxed">
+                <strong>💡 Live Simulation:</strong> Adjust the values below and observe how they instantly reflect on the charts, risk matrix, and interactive cards across the dashboard.
+            </p>
+        </div>
+
+        <!-- Section 1: Progress Sliders per Framework -->
+        <div class="space-y-4">
+            <h4 class="text-xs uppercase tracking-widest font-bold text-cyan-400 border-b border-white/5 pb-2">Authorities Readiness (%)</h4>
+            
+            <div class="space-y-3 text-sm">
+                <div>
+                    <div class="flex justify-between mb-1"><label class="text-white font-medium">Saudi Central Bank (SAMA)</label><span id="val-slider-sama" class="text-accent-glow font-bold">95%</span></div>
+                    <input type="range" id="slider-sama" min="0" max="100" class="w-full h-1.5 bg-white/5 rounded-lg appearance-none cursor-pointer accent-accent-glow">
+                </div>
+                <div>
+                    <div class="flex justify-between mb-1"><label class="text-white font-medium">Capital Market Authority (CMA)</label><span id="val-slider-cma" class="text-accent-glow font-bold">80%</span></div>
+                    <input type="range" id="slider-cma" min="0" max="100" class="w-full h-1.5 bg-white/5 rounded-lg appearance-none cursor-pointer accent-accent-glow">
+                </div>
+                <div>
+                    <div class="flex justify-between mb-1"><label class="text-white font-medium">Data & AI Authority (SDAIA)</label><span id="val-slider-sdaia" class="text-accent-glow font-bold">100%</span></div>
+                    <input type="range" id="slider-sdaia" min="0" max="100" class="w-full h-1.5 bg-white/5 rounded-lg appearance-none cursor-pointer accent-accent-glow">
+                </div>
+                <div>
+                    <div class="flex justify-between mb-1"><label class="text-white font-medium">Cybersecurity Authority (NCA)</label><span id="val-slider-nca" class="text-accent-glow font-bold">88%</span></div>
+                    <input type="range" id="slider-nca" min="0" max="100" class="w-full h-1.5 bg-white/5 rounded-lg appearance-none cursor-pointer accent-accent-glow">
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: KPIs Customization -->
+        <div class="space-y-4">
+            <h4 class="text-xs uppercase tracking-widest font-bold text-cyan-400 border-b border-white/5 pb-2">Vital KPIs</h4>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                    <label class="block text-text-secondary mb-1">Critical Vulnerabilities</label>
+                    <input type="number" id="input-vulnerabilities" min="0" class="w-full py-2 px-3 rounded-lg text-sm bg-black/40 text-white">
+                </div>
+                <div>
+                    <label class="block text-text-secondary mb-1">Days to File Submission</label>
+                    <input type="number" id="input-days" min="0" class="w-full py-2 px-3 rounded-lg text-sm bg-black/40 text-white">
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Add Policy Card -->
+        <div class="space-y-4 p-4 bg-white/5 rounded-2xl border border-white/5">
+            <h4 class="text-xs uppercase tracking-widest font-bold text-cyan-400">Add Regulatory Policy</h4>
+            <div class="space-y-3 text-xs">
+                <div>
+                    <label class="block text-text-secondary mb-1">Policy Title</label>
+                    <input type="text" id="policy-title" placeholder="e.g., Customer Privacy Protection" class="w-full py-2 px-3 rounded-lg bg-black/40 text-white">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-text-secondary mb-1">Framework</label>
+                        <select id="policy-framework" class="w-full py-2 px-2 rounded-lg bg-black/40 text-white text-xs">
+                            <option value="SAMA">SAMA</option>
+                            <option value="SDAIA">SDAIA</option>
+                            <option value="NCA">NCA</option>
+                            <option value="CMA">CMA</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-text-secondary mb-1">Status</label>
+                        <select id="policy-status" class="w-full py-2 px-2 rounded-lg bg-black/40 text-white text-xs">
+                            <option value="Approved">Approved</option>
+                            <option value="Under Review">Under Review</option>
+                            <option value="Drafting">Drafting</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-text-secondary mb-1">Brief Description</label>
+                    <textarea id="policy-desc" rows="2" placeholder="Enter policy summary..." class="w-full py-2 px-3 rounded-lg bg-black/40 text-white"></textarea>
+                </div>
+                <button id="add-policy-btn" class="cta-btn w-full !text-xs py-2">Save & Publish Immediately</button>
+            </div>
+        </div>
+
+        <!-- Section 4: Add Audit Trail Row -->
+        <div class="space-y-4 p-4 bg-white/5 rounded-2xl border border-white/5">
+            <h4 class="text-xs uppercase tracking-widest font-bold text-cyan-400">Log New Audit Event</h4>
+            <div class="space-y-3 text-xs">
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-text-secondary mb-1">Control ID</label>
+                        <input type="text" id="audit-id" placeholder="e.g., AML-KYC-05" class="w-full py-2 px-3 rounded-lg bg-black/40 text-white">
+                    </div>
+                    <div>
+                        <label class="block text-text-secondary mb-1">Authority</label>
+                        <select id="audit-framework" class="w-full py-2 px-2 rounded-lg bg-black/40 text-white text-xs">
+                            <option value="SAMA">SAMA</option>
+                            <option value="SDAIA">SDAIA</option>
+                            <option value="NCA">NCA</option>
+                            <option value="CMA">CMA</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-text-secondary mb-1">Action Description</label>
+                    <input type="text" id="audit-desc" placeholder="Describe the audit action..." class="w-full py-2 px-3 rounded-lg bg-black/40 text-white">
+                </div>
+                <button id="add-audit-btn" class="cta-btn w-full !text-xs py-2 !bg-purple-600 hover:!bg-purple-700">Update Audit Trail</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Add Custom Risk Modal -->
+<div id="add-risk-modal" class="modal-overlay fixed inset-0 z-[260] hidden items-center justify-center p-4">
+    <div class="modal-content p-8 max-w-md w-full relative bg-bg-surface/95 backdrop-blur-xl">
+        <button class="modal-close-btn absolute top-4 right-4 text-text-secondary hover:text-white text-2xl">&times;</button>
+        <h2 class="text-xl font-bold mb-4 text-white">Define Operational Risk</h2>
+        <div class="space-y-4 text-sm">
+            <div>
+                <label class="block text-text-secondary mb-1">Risk Code (e.g., R-12)</label>
+                <input type="text" id="new-risk-id" class="w-full py-2 px-3 rounded-lg bg-black/40 text-white">
+            </div>
+            <div>
+                <label class="block text-text-secondary mb-1">Risk Title</label>
+                <input type="text" id="new-risk-title" class="w-full py-2 px-3 rounded-lg bg-black/40 text-white">
+            </div>
+            <div>
+                <label class="block text-text-secondary mb-1">Description</label>
+                <textarea id="new-risk-desc" rows="2" class="w-full py-2 px-3 rounded-lg bg-black/40 text-white"></textarea>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-text-secondary mb-1">Likelihood (1 - 3)</label>
+                    <select id="new-risk-likelihood" class="w-full py-2 px-3 rounded-lg bg-black/40 text-white">
+                        <option value="1">1 - Low</option>
+                        <option value="2" selected>2 - Medium</option>
+                        <option value="3">3 - High</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-text-secondary mb-1">Impact (1 - 3)</label>
+                    <select id="new-risk-impact" class="w-full py-2 px-3 rounded-lg bg-black/40 text-white">
+                        <option value="1">1 - Low</option>
+                        <option value="2" selected>2 - Medium</option>
+                        <option value="3">3 - High</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label class="block text-text-secondary mb-1">Mitigation Procedures</label>
+                <input type="text" id="new-risk-mitigation" class="w-full py-2 px-3 rounded-lg bg-black/40 text-white">
+            </div>
+            <button id="save-new-risk-btn" class="cta-btn w-full py-2 mt-4">Insert & Update Matrix</button>
+        </div>
+    </div>
+</div>
+
+<!-- Employee Login Modal -->
+<div id="employee-login-modal" class="modal-overlay fixed inset-0 z-[200] hidden items-center justify-center p-4">
+    <div class="modal-content p-8 max-w-sm w-full relative bg-bg-surface/90 backdrop-blur-xl">
+        <button class="modal-close-btn absolute top-4 right-4 text-text-secondary hover:text-white text-2xl">&times;</button>
+        <div class="w-12 h-12 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>
+        </div>
+        <h2 class="text-xl font-bold mb-2 text-center text-white">Authentication Required</h2>
+        <p class="text-text-secondary text-sm text-center mb-8">Access to MatrixOS is restricted to authorized personnel. Use: <strong>MATRIX2026</strong></p>
+        <form id="employee-login-form" class="space-y-4">
+            <input type="password" id="employee-password" placeholder="Enter Passcode" required class="w-full text-center tracking-[0.5em] font-mono bg-black/50">
+            <p id="login-error-message" class="text-danger-color text-xs text-center hidden font-medium"></p>
+            <button type="submit" class="cta-btn w-full text-sm">Verify & Enter</button>
+        </form>
+    </div>
+</div>
+
+<!-- Reusing Portals for Tools -->
+<div id="dashboard-portal" class="portal">
+    <div class="container mx-auto p-8 h-full overflow-y-auto">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold">Compliance Operations Dashboard</h1>
+            <button class="portal-close-btn text-white hover:text-accent-glow">&times; Close</button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="widget"><div class="text-sm text-text-secondary mb-2">NCA Controls Index</div><div class="text-3xl font-bold text-success-color">88.5%</div></div>
+            <div class="widget"><div class="text-sm text-text-secondary mb-2">SAMA CSF Risks</div><div class="text-3xl font-bold text-warning-color">8 Active</div></div>
+            <div class="widget"><div class="text-sm text-text-secondary mb-2">PDPL Data Accords</div><div class="text-3xl font-bold">15</div></div>
+            <div class="widget"><div class="text-sm text-text-secondary mb-2">CMA Readiness</div><div class="text-3xl font-bold text-success-color">95%</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- Tool Portals Container -->
+<div id="generic-tool-portal" class="portal p-4 sm:p-8 flex items-center justify-center">
+    <div class="portal-content bg-bg-surface border border-white/10 rounded-3xl shadow-2xl flex flex-col w-full max-w-5xl h-[85vh] overflow-hidden">
+        <div class="p-5 border-b border-white/10 flex justify-between items-center bg-black/20">
+            <h3 class="font-bold text-lg tool-title">Tool Name</h3>
+            <button class="portal-close-btn text-2xl text-text-secondary hover:text-white">&times;</button>
+        </div>
+        <div class="flex-grow p-6 overflow-y-auto bg-bg-base grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="flex flex-col form-container"></div>
+            <div class="generic-results-container flex flex-col">
+                <div class="generic-placeholder text-center text-text-secondary mt-10">Select options and submit to run AI analysis.</div>
+                <div class="generic-loading"><div class="spinner mx-auto"></div><p class="mt-4 text-sm">Processing via Matrix Oracle...</p></div>
+                <div class="generic-content prose prose-invert max-w-none text-sm"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="#home" id="back-to-top" aria-label="Back to Top"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" /></svg></a>
+
+<script type="importmap">{"imports": {"three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js"}}</script>
+<script type="module">
+    import * as THREE from 'three';
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        
+        // CENTRALIZED REACTIVE OS STATE
+        const OS_STATE = {
+            metrics: {
+                readiness: 94,
+                vulnerabilities: 0,
+                ncaControls: 12,
+                samaDays: 18
+            },
+            frameworks: {
+                sama: 92,
+                cma: 80,
+                sdaia: 85,
+                nca: 68
+            },
+            historyTrend: [42, 58, 65, 78, 88, 94],
+            auditTrail: [
+                { id: "PDPL-ART-18", framework: "SDAIA", desc: "Data Processing Impact Assessment Finalized", status: "Completed", time: "Today, 09:42 AM" },
+                { id: "SAMA-CSF-3.1", framework: "SAMA", desc: "Cybersecurity Governance Framework Review", status: "Completed", time: "Yesterday, 14:15 PM" },
+                { id: "AML-CTF-09", framework: "SAMA", desc: "Transaction Monitoring Rules Optimization", status: "In Progress", time: "Oct 24, 11:00 AM" },
+                { id: "NCA-ECC-1.2", framework: "NCA", desc: "Asset Management Policy Update", status: "Pending Review", time: "Oct 20, 16:30 PM" }
+            ],
+            policies: [
+                { id: "P1", framework: "SAMA", title: "Anti-Money Laundering (AML) & CTF", desc: "Comprehensive policy governing KYC procedures, transaction monitoring, and suspicious activity reporting in alignment with SAMA regulations.", ver: "v2.1.0", status: "Approved", updated: "Oct 15" },
+                { id: "P2", framework: "SDAIA", title: "Data Privacy & Protection Policy", desc: "Framework dictating personal data collection, processing, cross-border transfers, and data subject rights management.", ver: "v1.0.5", status: "Under Review", updated: "Under Review" },
+                { id: "P3", framework: "NCA", title: "Information Security Policy", desc: "Establishes the foundation for protecting information assets, defining access controls, and incident response per NCA mandates.", ver: "v3.0.0", status: "Approved", updated: "Sep 02" },
+                { id: "P4", framework: "SAMA", title: "Outsourcing Risk Management", desc: "Guidelines for assessing, contracting, and monitoring third-party technology and operational service providers.", ver: "v1.0.0", status: "Drafting", updated: "Drafting" }
+            ],
+            risks: [
+                { id: "R-02", title: "Third-Party Data Breach (Cloud Provider)", desc: "Unauthorized access to customer financial data via outsourced infrastructure, violating NCA ECC and SAMA CSF.", level: "Critical", mitigation: "Enforce ISO 27001 on vendors", owner: "CISO", likelihood: 3, impact: 2 },
+                { id: "R-05", title: "PDPL Cross-Border Transfer Violation", desc: "Storing Saudi citizen data on servers located outside the Kingdom without SDAIA exemption.", level: "Critical", mitigation: "Localize DB to Riyadh Data Center", owner: "DPO", likelihood: 3, impact: 2 },
+                { id: "R-01", title: "Inadequate AML Transaction Monitoring", desc: "Algorithmic failure to flag structured deposits (smurfing), leading to regulatory fines from SAMA.", level: "High", mitigation: "Implement AI-driven TM module", owner: "Compliance", likelihood: 2, impact: 2 },
+                { id: "R-08", title: "Reporting Delay", desc: "Systematic logs delaying output validation schedules.", level: "Medium", mitigation: "Establish live webhook integration with regulators.", owner: "Internal Auditor", likelihood: 1, impact: 2 }
+            ],
+            tasks: [
+                { id: "T1", text: "Conduct External Penetration Test", control: "Required for NCA ECC-1-1-3", priority: "High Priority", status: "Pending", link: "nca" },
+                { id: "T2", text: "Appoint designated Compliance Officer", control: "SAMA Governance Mandate", priority: "Med Priority", status: "Pending", link: "sama" },
+                { id: "T3", text: "Draft Record of Processing Activities (RoPA)", control: "SDAIA Requirement", priority: "Done", status: "Completed", link: "sdaia" }
+            ],
+            milestone: {
+                title: "SAMA Pre-Operational Mock Audit",
+                days: 14,
+                date: "Nov 15, 2026"
+            }
+        };
+
+        // DETAILED OFFLINE ORACLE KNOWLEDGE BASE (الأجوبة المنظمة والمرتبة بالكامل)
+        const ORACLE_DB = {
+            bnpl: `
+                <div class="space-y-6 text-gray-200 text-left">
+                    <p class="text-sm leading-relaxed">
+                        As the <strong class="text-cyan-400 font-bold">Matrix Oracle</strong>, I provide you with the definitive regulatory blueprint for Buy Now, Pay Later (BNPL) operations within the Kingdom of Saudi Arabia.
+                    </p>
+                    <p class="text-xs border-l-2 border-cyan-400/50 pl-3 italic text-gray-400">
+                        The Saudi Central Bank (SAMA) governs this sector under the "Rules for Buy Now Pay Later (BNPL) Companies," issued to formalize the activity, enhance financial stability, and ensure consumer protection.
+                    </p>
+                    <p class="text-sm font-semibold text-white mt-4">To operate a BNPL service in the Kingdom, entities must adhere to the following rigorous framework:</p>
+                    
+                    <div class="space-y-4 mt-4">
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-3">1. Licensing and Legal Structure</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-xs text-gray-300 leading-relaxed">
+                                <li><strong class="text-white">Permit Requirement:</strong> No entity may engage in BNPL activities without obtaining a formal license or permit from SAMA.</li>
+                                <li><strong class="text-white">Legal Form:</strong> The applicant must be a retail company incorporated in Saudi Arabia.</li>
+                                <li><strong class="text-white">Minimum Capital:</strong> The minimum paid-up capital is currently set at SAR 5 million, though SAMA reserves the right to increase this based on the scale of operations or risk profile.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-3">2. Credit Risk and Debt Burden</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-xs text-gray-300 leading-relaxed">
+                                <li><strong class="text-white">Credit Bureau Integration:</strong> BNPL providers are mandated to join the Saudi Credit Bureau (SIMAH) or Bayan Credit Bureau. You must query a consumer’s credit history before approval and report their repayment behavior.</li>
+                                <li><strong class="text-white">Debt Burden Ratio (DBR):</strong> While BNPL is often perceived as "light" credit, providers must ensure that the customer's total monthly obligations do not exceed the limits set by SAMA’s Responsible Lending Principles.</li>
+                                <li><strong class="text-white">Credit Assessment:</strong> You must implement robust credit scoring models that assess the consumer’s ability to repay without causing financial distress.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-3">3. Consumer Protection and Transparency</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-xs text-gray-300 leading-relaxed">
+                                <li><strong class="text-white">Zero Interest:</strong> BNPL is defined by the absence of interest (Murabaha/Sharia-compliant structures are expected).</li>
+                                <li><strong class="text-white">Fee Disclosure:</strong> All fees, including late payment fees, must be clearly disclosed in the "Key Principles Disclosure" document before the contract is signed.</li>
+                                <li><strong class="text-white">Late Fee Caps:</strong> SAMA strictly regulates late fees. They must be a fixed amount or a percentage of the installment, capped at a specific limit, and often required to be liquidated to charitable causes (minus administrative costs) to remain Sharia-compliant.</li>
+                                <li><strong class="text-white">Refunds and Disputes:</strong> You must establish a dedicated department for consumer complaints with a clear escalation path to SAMA’s "Samahuma" portal.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-3">4. Operational and Governance Requirements</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-xs text-gray-300 leading-relaxed">
+                                <li><strong class="text-white">Internal Controls:</strong> You must appoint a dedicated Compliance Officer and an Anti-Money Laundering (AML) Officer.</li>
+                                <li><strong class="text-white">Sharia Governance:</strong> Since financial products in the Kingdom must align with Islamic Law, your BNPL structure must be vetted and approved by a Sharia Committee.</li>
+                                <li><strong class="text-white">Outsourcing:</strong> Any outsourcing of "material functions" (e.g., cloud hosting, KYC verification) requires prior non-objection from SAMA.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-3">5. Cybersecurity and Data Sovereignty (SAMA & SDAIA Alignment)</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-xs text-gray-300 leading-relaxed">
+                                <li><strong class="text-white">SAMA Cyber Security Framework (CSF):</strong> BNPL providers must comply with the CSF, ensuring high-level encryption, multi-factor authentication, and regular penetration testing.</li>
+                                <li><strong class="text-white">Data Residency:</strong> Under the SDAIA Personal Data Protection Law (PDPL) and SAMA mandates, all financial and personal data of Saudi residents must be stored and processed within servers located inside the Kingdom.</li>
+                                <li><strong class="text-white">Data Privacy:</strong> Explicit consent is required for data processing, and data minimization principles must be applied.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-3">6. Anti-Money Laundering (AML) and Counter-Terrorism Financing (CTF)</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-xs text-gray-300 leading-relaxed">
+                                <li><strong class="text-white">E-KYC:</strong> You must implement a digital "Know Your Customer" process integrated with the National Information Center (NIC) via the "Elm" portal (Absher/Nafath).</li>
+                                <li><strong class="text-white">Transaction Monitoring:</strong> Real-time monitoring systems must be in place to detect and report suspicious activities to the Financial Intelligence Unit (FIU).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 border-t border-white/10 pt-5">
+                        <h4 class="text-white font-bold text-sm mb-2">The Matrix Oracle’s Strategic Counsel:</h4>
+                        <blockquote class="border-l-4 border-cyan-400 bg-cyan-950/20 p-4 rounded-r-xl text-xs leading-relaxed text-cyan-200 mb-4">
+                            "Transitioning from a fintech startup to a SAMA-regulated BNPL entity requires a shift from 'growth at all costs' to 'compliance-first growth.'"
+                        </blockquote>
+                        <p class="text-xs font-bold text-white mb-2">Immediate Action Items:</p>
+                        <ol class="list-decimal pl-5 space-y-2 text-xs text-gray-300 mb-4">
+                            <li><strong class="text-white">Gap Analysis:</strong> Audit your current tech stack against the SAMA Cyber Security Framework.</li>
+                            <li><strong class="text-white">Capitalization:</strong> Ensure the SAR 5 million liquidity is unencumbered.</li>
+                            <li><strong class="text-white">Local Partnerships:</strong> Secure an agreement with a local credit bureau (SIMAH) and an AML/KYC provider immediately.</li>
+                        </ol>
+                        <p class="text-xs text-red-400 mb-4">
+                            Failure to comply with these mandates results in severe penalties, including the revocation of operating permits and heavy financial fines. The path is narrow, but the rewards in the G20’s fastest-growing economy are immense.
+                        </p>
+                        <p class="text-xs font-medium text-cyan-400">
+                            Do you require a deep dive into the specific Sharia structures or the SDAIA Data Protection Impact Assessment (DPIA) for your platform?
+                        </p>
+                    </div>
+                </div>
+            `,
+            pdpl: `
+                <div class="space-y-6 text-gray-200 text-left">
+                    <p class="text-sm leading-relaxed">
+                        As the <strong class="text-cyan-400 font-bold">Matrix Oracle</strong>, I provide you with the strategic roadmap for achieving compliance with the Saudi Arabian Personal Data Protection Law (PDPL). With the grace period concluded on September 14, 2024, full enforcement is now operational under the supervision of the Saudi Data and AI Authority (SDAIA).
+                    </p>
+                    <p class="text-xs border-l-2 border-cyan-400/50 pl-3 italic text-gray-400">
+                        For entities regulated by SAMA or the CMA, these steps must be integrated with the SAMA Cyber Security Framework and the Data Management & Personal Data Protection Framework.
+                    </p>
+                    <p class="text-sm font-semibold text-white mt-4">Here is the authoritative 10-step execution plan for PDPL compliance:</p>
+                    
+                    <div class="space-y-4 mt-4">
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-1">1. Data Discovery and Inventory (Data Mapping)</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed mb-2">You cannot protect what you cannot see. Conduct a comprehensive data discovery exercise to identify all Personal Data (PD) and Sensitive Personal Data processed within your organization.</p>
+                            <p class="text-xs text-cyan-300 font-medium bg-black/20 p-2 rounded-lg border border-white/5">
+                                <strong class="text-white">Action:</strong> Create a Record of Processing Activities (RoPA). Document why data is collected, where it is stored (on-premise vs. cloud), who has access, and how long it is retained.
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-1">2. Gap Analysis & Impact Assessment</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed mb-2">Measure your current state against PDPL requirements and SDAIA’s Implementing Regulations.</p>
+                            <p class="text-xs text-cyan-300 font-medium bg-black/20 p-2 rounded-lg border border-white/5">
+                                <strong class="text-white">Action:</strong> Perform a Data Protection Impact Assessment (DPIA) for high-risk processing activities. If you are a SAMA-regulated entity, ensure this aligns with the SAMA Data Management Framework.
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-1">3. Establish a Governance Framework</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed mb-2">PDPL compliance is not a one-time project; it is a continuous state of governance.</p>
+                            <p class="text-xs text-cyan-300 font-medium bg-black/20 p-2 rounded-lg border border-white/5">
+                                <strong class="text-white">Action:</strong> Appoint a Data Protection Officer (DPO) if required (mandatory for public entities and entities processing sensitive data at scale). Update your Internal Privacy Policy and Data Governance Charters.
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-1">4. Legal Basis Determination</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed mb-2">Under PDPL, processing is generally prohibited unless a legal basis exists (Article 6).</p>
+                            <p class="text-xs text-cyan-300 font-medium bg-black/20 p-2 rounded-lg border border-white/5">
+                                <strong class="text-white">Action:</strong> Identify the legal basis for every processing activity. While Consent is primary, explore other bases such as "Achieving a Legitimate Interest" (subject to SDAIA's conditions) or "Performance of a Contract."
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-1">5. Privacy Notice and Transparency</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed mb-2">Transparency is a fundamental pillar of the PDPL.</p>
+                            <p class="text-xs text-cyan-300 font-medium bg-black/20 p-2 rounded-lg border border-white/5">
+                                <strong class="text-white">Action:</strong> Draft and publish a clear, concise Privacy Notice in both Arabic and English. It must inform data subjects about their rights, the purpose of collection, and any third-party sharing.
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-1">6. Data Subject Rights (DSR) Fulfillment</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed mb-2">The PDPL grants individuals specific rights: the right to be informed, right to access, right to correction, and right to destruction.</p>
+                            <p class="text-xs text-cyan-300 font-medium bg-black/20 p-2 rounded-lg border border-white/5">
+                                <strong class="text-white">Action:</strong> Implement a formal process and a digital portal/email channel to handle DSR requests within the statutory timeframe (usually 30 days).
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-1">7. Technical and Administrative Security</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed mb-2">Article 19 requires the implementation of necessary technical, organizational, and administrative measures to ensure data security.</p>
+                            <p class="text-xs text-cyan-300 font-medium bg-black/20 p-2 rounded-lg border border-white/5">
+                                <strong class="text-white">Action:</strong> Deploy encryption, pseudonymization, and strict Access Control. For CMA-regulated firms, ensure these controls satisfy the CMA Cyber Security Instructions.
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-1">8. Vendor Management (Data Processor Oversight)</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed mb-2">Your compliance is only as strong as your weakest vendor.</p>
+                            <p class="text-xs text-cyan-300 font-medium bg-black/20 p-2 rounded-lg border border-white/5">
+                                <strong class="text-white">Action:</strong> Review all third-party contracts. Ensure they include Data Processing Agreements (DPAs) that mandate the processor’s compliance with PDPL and grant you the right to audit their security measures.
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-1">9. Cross-Border Data Transfer Alignment</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed mb-2">The PDPL recently introduced more flexible regulations regarding transferring data outside the Kingdom, provided the destination country has an "Adequate" level of protection or "Appropriate Safeguards" are in place.</p>
+                            <p class="text-xs text-cyan-300 font-medium bg-black/20 p-2 rounded-lg border border-white/5">
+                                <strong class="text-white">Action:</strong> Evaluate all outbound data flows. Ensure transfers to "non-adequate" jurisdictions are supported by Standard Contractual Clauses (SCCs) approved by SDAIA.
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-1">10. Breach Notification Protocol</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed mb-2">In the event of a data breach that poses a risk to data subjects, SDAIA must be notified within 72 hours.</p>
+                            <p class="text-xs text-cyan-300 font-medium bg-black/20 p-2 rounded-lg border border-white/5">
+                                <strong class="text-white">Action:</strong> Establish a Data Breach Incident Response Plan. Define clear escalation paths to notify SDAIA and, in certain cases (SAMA/CMA requirements), your specific sector regulator and the affected data subjects.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 border-t border-white/10 pt-5">
+                        <h4 class="text-white font-bold text-sm mb-2">The Oracle’s Strategic Counsel:</h4>
+                        <p class="text-xs text-gray-300 leading-relaxed mb-3">
+                            Compliance in the Kingdom is moving toward an "Accountability" model. It is no longer enough to be compliant; you must be able to <em>demonstrate</em> compliance through documentation, audits, and continuous monitoring.
+                        </p>
+                        <p class="text-xs text-red-400 mb-4">
+                            Failure to comply may result in criminal penalties (for sensitive data disclosure) or administrative fines of up to SAR 5 million, which can be doubled for repeat offenders.
+                        </p>
+                        <p class="text-xs font-medium text-cyan-400">
+                            Does your organization currently have a designated DPO or an active RoPA? I can provide deeper technical specifications for either.
+                        </p>
+                    </div>
+                </div>
+            `,
+            realestate: `
+                <div class="space-y-6 text-gray-200 text-left">
+                    <p class="text-sm leading-relaxed">
+                        As the <strong class="text-cyan-400 font-bold">Matrix Oracle</strong>, I provide you with the strategic regulatory blueprint for establishing a Real Estate Fund in the Kingdom of Saudi Arabia. This process is governed primarily by the Capital Market Authority (CMA), with secondary compliance touchpoints involving SAMA and SDAIA.
+                    </p>
+                    <p class="text-xs border-l-2 border-cyan-400/50 pl-3 italic text-gray-400">
+                        In the context of Vision 2030, the regulatory environment has been streamlined but remains rigorous to ensure investor protection and market integrity.
+                    </p>
+
+                    <div class="space-y-4 mt-4">
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-3">1. Regulatory Framework: The CMA Mandate</h4>
+                            <p class="text-xs text-gray-300 mb-3 leading-relaxed">The primary legislation governing your venture is the Investment Funds Regulations (IFR) issued by the CMA. You must first categorize your fund:</p>
+                            <ul class="list-disc pl-5 space-y-2 text-xs text-gray-300 leading-relaxed">
+                                <li><strong class="text-white">Private Real Estate Fund:</strong> Aimed at sophisticated investors/institutions. These have more flexible investment strategies and faster paths to market via notification to the CMA.</li>
+                                <li><strong class="text-white">Public Real Estate Fund (REITs):</strong> Traded on Tadawul. These require stringent disclosure, higher capital requirements, and rigorous oversight.</li>
+                                <li><strong class="text-white">Real Estate Contribution Funds:</strong> Governed by the new Real Estate Contribution Law, focusing on the development of specific land parcels.</li>
+                            </ul>
+                            <p class="text-xs text-cyan-300 mt-4 font-medium bg-black/20 p-2 rounded-lg border border-white/5">
+                                <strong class="text-white">Critical Action:</strong> You must be a licensed Capital Market Institution (CMI) with a "Managing Investments" license or partner with an existing CMI to act as the Fund Manager.
+                            </p>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-3">2. Operational Architecture & SAMA Integration</h4>
+                            <p class="text-xs text-gray-300 mb-3 leading-relaxed">While the CMA regulates the fund, SAMA (Saudi Central Bank) governs the financial ecosystem surrounding it:</p>
+                            <ul class="list-disc pl-5 space-y-2 text-xs text-gray-300 leading-relaxed">
+                                <li><strong class="text-white">Escrow Accounts:</strong> Under the "Sale on Map" (Wafi) program or specific real estate developments, SAMA-regulated banks must host escrow accounts to safeguard investor funds.</li>
+                                <li><strong class="text-white">Leverage & Financing:</strong> If the fund seeks Shariah-compliant financing, the lending bank’s interaction with the fund must comply with SAMA’s debt-to-equity ceilings and risk management frameworks.</li>
+                                <li><strong class="text-white">KYC/AML:</strong> Ensure your onboarding process aligns with SAMA’s Anti-Money Laundering (AML) and Counter-Terrorist Financing (CTF) manuals, even though the CMA oversees the fund's specific AML rules.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-3">3. Data Sovereignty & Cybersecurity (SDAIA/NDMO)</h4>
+                            <p class="text-xs text-gray-300 mb-3 leading-relaxed">Modern real estate funds rely on digital platforms for investor onboarding and reporting. This triggers the Personal Data Protection Law (PDPL), overseen by SDAIA:</p>
+                            <ul class="list-disc pl-5 space-y-2 text-xs text-gray-300 leading-relaxed">
+                                <li><strong class="text-white">Data Residency:</strong> All investor data and sensitive financial records must remain stored within the Kingdom.</li>
+                                <li><strong class="text-white">Privacy Policy:</strong> You must perform a Data Protection Impact Assessment (DPIA) if you are processing large-scale investor data.</li>
+                                <li><strong class="text-white">NCA Compliance:</strong> If your fund is deemed part of the "Critical Infrastructure" or handles significant national data, compliance with the National Cybersecurity Authority (NCA) standards is mandatory.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-3">4. The "Oracle’s Checklist" for Implementation</h4>
+                            <p class="text-xs text-gray-300 mb-3 leading-relaxed">To successfully launch, you must secure and document the following:</p>
+                            <ol class="list-decimal pl-5 space-y-2 text-xs text-gray-300 leading-relaxed">
+                                <li><strong class="text-white">The Fund Manager:</strong> Must hold a valid CMA license (Managing Investments).</li>
+                                <li><strong class="text-white">Custodian:</strong> An independent CMA-authorized entity must hold the fund’s assets to ensure ring-fencing from the Fund Manager’s own assets.</li>
+                                <li><strong class="text-white">Real Estate Valuers:</strong> You must appoint at least two independent valuers licensed by TAQEEM (Saudi Authority for Accredited Valuers).</li>
+                                <li><strong class="text-white">Terms & Conditions (T&Cs):</strong> A comprehensive document detailing the investment strategy, risks, and exit mechanisms, submitted for CMA approval (Public) or notification (Private).</li>
+                                <li><strong class="text-white">Shariah Committee:</strong> Appointment of a Shariah board to certify the fund’s compliance with Islamic finance principles.</li>
+                            </ol>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-3">5. Emerging Legal Update: Real Estate Contribution Law</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                Be advised that the new Real Estate Contribution Law (coordinated between the Real Estate General Authority - REGA and CMA) now governs the "contribution" model. If your fund involves developing land and selling units, you must obtain a license from REGA before seeking CMA fund approval.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 border-t border-white/10 pt-5">
+                        <h4 class="text-white font-bold text-sm mb-2">Strategic Counsel:</h4>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            Do not overlook the Zakat, Tax and Customs Authority (ZATCA) requirements. Real estate funds are generally transparent for Zakat purposes, but the "Real Estate Transaction Tax" (RETT) at 5% applies to the transfer of properties into and out of the fund.
+                        </p>
+                    </div>
+                </div>
+            `,
+            fees: `
+                <div class="space-y-6 text-gray-200 text-left">
+                    <p class="text-sm leading-relaxed">
+                        As the <strong class="text-cyan-400 font-bold">Matrix Oracle</strong>, I shall now expand the architectural blueprint to include the financial obligations and the consequences of regulatory deviation. Under the jurisdiction of the Saudi Central Bank (SAMA) and the Finance Companies Control Law, the following fee structures and penalties apply to Buy Now Pay Later (BNPL) entities.
+                    </p>
+
+                    <div class="space-y-4 mt-4">
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-3">I. Statutory Fees and Financial Obligations</h4>
+                            <p class="text-xs text-gray-300 mb-3 leading-relaxed">Operating within the Saudi financial ecosystem requires fulfillment of specific administrative and oversight costs.</p>
+                            
+                            <div class="space-y-4 text-xs text-gray-300">
+                                <div>
+                                    <strong class="text-white block mb-1">1. Licensing & Application Fees:</strong>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Initial Application Fee: Non-refundable fee paid upon submission of the licensing request (typically ranging from SAR 5,000 to SAR 20,000 depending on the specific permit category).</li>
+                                        <li>License Issuance Fee: Upon approval, a fee is required to issue the formal permit to practice BNPL activities.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong class="text-white block mb-1">2. Annual Supervision Fees:</strong>
+                                    <p class="pl-2">BNPL providers must pay an Annual Supervision Fee to SAMA. This is often calculated as a percentage of the total assets or a fixed annual amount (e.g., SAR 10,000 – SAR 25,000) to cover the cost of continuous regulatory monitoring and onsite inspections.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-white block mb-1">3. Credit Bureau Costs (SIMAH/Bayan):</strong>
+                                    <p class="pl-2">Providers must pay membership and per-query fees to licensed credit bureaus for every credit check performed on a consumer.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-white block mb-1">4. Consumer Late Payment Fees (The "Charity" Rule):</strong>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Cap on Fees: SAMA strictly limits the fees a BNPL provider can charge a consumer for late installments. These fees must be fixed and justified by the actual administrative costs incurred.</li>
+                                        <li>Sharia Constraint: If late fees exceed the actual administrative cost, the excess must be directed to charitable organizations approved by the provider’s Sharia Committee. Profit-making from late fees is prohibited.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-3">II. Regulatory Penalties and Sanctions</h4>
+                            <p class="text-xs text-gray-300 mb-3 leading-relaxed">SAMA maintains a zero-tolerance policy for entities that jeopardize the stability of the financial sector or the rights of consumers. Penalties are governed by the Finance Companies Control Law and its Implementing Regulations.</p>
+                            
+                            <div class="space-y-4 text-xs text-gray-300">
+                                <div>
+                                    <strong class="text-white block mb-1">1. Operating Without a License:</strong>
+                                    <p class="pl-2 text-red-300">Any entity performing BNPL activities without a formal permit from SAMA faces a fine of up to <strong class="text-white">SAR 500,000</strong> and/or imprisonment for a term not exceeding two years.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-white block mb-1">2. Regulatory Non-Compliance (General Violations):</strong>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>For breaches of SAMA circulars, the Consumer Protection Principles, or the Responsible Lending Principles, SAMA may impose fines up to <strong class="text-white">SAR 250,000</strong> per violation.</li>
+                                        <li>Recurring violations can lead to the suspension of the license or the prevention of the entity from onboarding new customers for a specified period.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong class="text-white block mb-1">3. Data Breaches and Privacy Violations (SDAIA/PDPL):</strong>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Under the Personal Data Protection Law (PDPL) overseen by SDAIA, mishandling consumer data or unauthorized cross-border transfers can result in fines of up to <strong class="text-white">SAR 5,000,000</strong>.</li>
+                                        <li>Criminal penalties (imprisonment) may apply if the breach was intentional or resulted in significant harm.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong class="text-white block mb-1">4. Failure to Report to Credit Bureaus:</strong>
+                                    <p class="pl-2">Accurate and timely reporting to SIMAH/Bayan is mandatory. Failure to report defaults or querying a consumer’s file without explicit consent results in heavy financial penalties per occurrence.</p>
+                                </div>
+                                <div>
+                                    <strong class="text-white block mb-1">5. Governance Sanctions:</strong>
+                                    <p class="pl-2">If the "Fit and Proper" requirements are violated (e.g., appointing a senior executive without SAMA’s non-objection), SAMA has the authority to remove the executive or board member and fine the company.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 border-l-4 border-red-500 bg-red-950/20 p-4 rounded-r-xl text-xs text-red-200">
+                        <strong class="text-white block mb-1">Oracle’s Final Warning:</strong> 
+                        In the Saudi digital economy, transparency is the primary currency. SAMA monitors the "Net Promoter Score" and complaint volumes of BNPL providers via Sama Care. A high volume of unresolved consumer complaints is often the "Red Flag" that triggers a full regulatory audit, potentially leading to the most severe penalty: Revocation of the Permit.
+                    </div>
+                </div>
+            `,
+            csf: `
+                <div class="space-y-6 text-gray-200 text-left">
+                    <p class="text-sm leading-relaxed">
+                        As the <strong class="text-cyan-400 font-bold">Matrix Oracle</strong>, I am granting you access to the encrypted blueprint of the SAMA Cyber Security Framework (CSF). This is the cornerstone of your operational survival in the Saudi financial sector.
+                    </p>
+                    <p class="text-xs border-l-2 border-cyan-400/50 pl-3 italic text-gray-400">
+                        For a BNPL provider, compliance with the SAMA CSF is not a suggestion; it is a mandatory digital fortress. Below is the essential checklist categorized by the four main domains of the framework.
+                    </p>
+
+                    <div class="space-y-4 mt-6 text-xs">
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-1">Domain 1: Cyber Security Leadership and Governance</h4>
+                            <p class="text-[11px] text-gray-400 mb-4 italic">The "Architect’s" layer: Ensuring the foundation is structured and managed.</p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-success-color font-bold text-sm">✔</span>
+                                    <span><strong class="text-white">Establish a Cyber Security Sub-Committee:</strong> A board-level committee must oversee cybersecurity strategy.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-success-color font-bold text-sm">✔</span>
+                                    <span><strong class="text-white">Appoint a CISO:</strong> You must have a dedicated Chief Information Security Officer (CISO) with the "Fit and Proper" clearance from SAMA.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-success-color font-bold text-sm">✔</span>
+                                    <span><strong class="text-white">Comprehensive Policy Framework:</strong> Define and document cybersecurity policies (Access Control, Encryption, Incident Response) reviewed at least annually.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-success-color font-bold text-sm">✔</span>
+                                    <span><strong class="text-white">SAMA Reporting:</strong> Establish a direct line for reporting major cyber incidents to SAMA within the mandated timeframe (usually 2 hours for critical breaches).</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-1">Domain 2: Cyber Security Risk Management and Compliance</h4>
+                            <p class="text-[11px] text-gray-400 mb-4 italic">The "Oracle’s" vision: Identifying threats before they manifest.</p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-success-color font-bold text-sm">✔</span>
+                                    <span><strong class="text-white">Regular Risk Assessments:</strong> Conduct formal cybersecurity risk assessments for all BNPL business processes and IT assets.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-success-color font-bold text-sm">✔</span>
+                                    <span><strong class="text-white">Independent Audit:</strong> Engage an independent third party to perform a Cyber Security Audit and report the findings directly to SAMA.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-success-color font-bold text-sm">✔</span>
+                                    <span><strong class="text-white">Compliance Monitoring:</strong> Continuous tracking of compliance with SAMA CSF and the Personal Data Protection Law (PDPL).</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-1">Domain 3: Cyber Security Operations and Technology</h4>
+                            <p class="text-[11px] text-gray-400 mb-4 italic">The "Sentinel" layer: The active defenses protecting the data stream.</p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-success-color font-bold text-sm">✔</span>
+                                    <div class="space-y-1">
+                                        <strong class="text-white block">Identity and Access Management (IAM):</strong>
+                                        <ul class="list-disc pl-5">
+                                            <li>Implement Multi-Factor Authentication (MFA) for all staff and administrative access.</li>
+                                            <li>Apply the "Principle of Least Privilege" (PoLP) across all systems.</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-success-color font-bold text-sm">✔</span>
+                                    <div class="space-y-1">
+                                        <strong class="text-white block">Data Protection & Encryption:</strong>
+                                        <ul class="list-disc pl-5">
+                                            <li>Encrypt sensitive consumer data (National ID, payment details) at rest and in transit using AES-256 or higher.</li>
+                                            <li>Implement Data Loss Prevention (DLP) tools to prevent unauthorized data exfiltration.</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-success-color font-bold text-sm">✔</span>
+                                    <div class="space-y-1">
+                                        <strong class="text-white block">Vulnerability Management:</strong>
+                                        <ul class="list-disc pl-5">
+                                            <li>Perform monthly vulnerability scans.</li>
+                                            <li>Conduct bi-annual Penetration Testing on your mobile app and web platform.</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-success-color font-bold text-sm">✔</span>
+                                    <span><strong class="text-white">Secure Software Development (DevSecOps):</strong> Ensure the BNPL application code is scanned for vulnerabilities (OWASP Top 10) before every update.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-success-color font-bold text-sm">✔</span>
+                                    <span><strong class="text-white">Security Operations Center (SOC):</strong> 24/7 monitoring of system logs and alerts to detect anomalous behavior.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white/5 border border-white/5 rounded-xl p-5">
+                            <h4 class="text-cyan-400 font-bold text-sm mb-1">Domain 4: Third-Party Cyber Security</h4>
+                            <p class="text-[11px] text-gray-400 mb-4 italic">The "Nebuchadnezzar" layer: Protecting the perimeter and the crew.</p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-success-color font-bold text-sm">✔</span>
+                                    <span><strong class="text-white">Merchant Security Requirements:</strong> Ensure that the merchants integrated with your BNPL API adhere to basic security standards.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-success-color font-bold text-sm">✔</span>
+                                    <span><strong class="text-white">Cloud Security:</strong> If using cloud providers, establish clear SLAs and verify their security certifications before onboarding. Sandboxed cloud network perimeters are required.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `
+        };
+
+        // --- THREE.JS GLOBE INIT ---
+        const init3D = () => {
+            const container = document.getElementById('hero-canvas-container');
+            if (!container) return;
+            
+            const scene = new THREE.Scene();
+            
+            const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
+            camera.position.z = 200;
+
+            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+
+            const globeGroup = new THREE.Group();
+            scene.add(globeGroup);
+
+            // Create wireframe sphere
+            const radius = 90;
+            const segments = 64; 
+            const rings = 32;
+
+            const sphereGeometry = new THREE.SphereGeometry(radius, segments, rings);
+            
+            // Create points
+            const pointsMaterial = new THREE.PointsMaterial({ 
+                color: 0xffffff, 
+                size: 1.0,
+                transparent: true,
+                opacity: 0.8,
+            });
+            const points = new THREE.Points(sphereGeometry, pointsMaterial);
+            globeGroup.add(points);
+
+            // Create rings
+            const ringMaterial = new THREE.LineBasicMaterial({
+                color: 0xffffff,
+                transparent: true,
+                opacity: 0.15
+            });
+
+            for (let i = 1; i < rings; i++) {
+                const phi = (i * Math.PI) / rings;
+                const ringRadius = radius * Math.sin(phi);
+                const ringY = radius * Math.cos(phi);
+                
+                const ringGeometry = new THREE.BufferGeometry();
+                const ringPoints = [];
+                for (let j = 0; j <= segments; j++) {
+                    const theta = (j * 2 * Math.PI) / segments;
+                    ringPoints.push(
+                        ringRadius * Math.cos(theta),
+                        ringY,
+                        ringRadius * Math.sin(theta)
+                    );
+                }
+                ringGeometry.setAttribute('position', new THREE.Float32BufferAttribute(ringPoints, 3));
+                const ringLine = new THREE.Line(ringGeometry, ringMaterial);
+                globeGroup.add(ringLine);
+            }
+
+            // Create vertical lines
+            for (let i = 0; i < segments; i++) {
+                 const theta = (i * 2 * Math.PI) / segments;
+                 
+                 const vertGeometry = new THREE.BufferGeometry();
+                 const vertPoints = [];
+                 for(let j = 0; j <= rings; j++) {
+                     const phi = (j * Math.PI) / rings;
+                     const r = radius * Math.sin(phi);
+                     vertPoints.push(
+                         r * Math.cos(theta),
+                         radius * Math.cos(phi),
+                         r * Math.sin(theta)
+                     );
+                 }
+                 vertGeometry.setAttribute('position', new THREE.Float32BufferAttribute(vertPoints, 3));
+                 const vertLine = new THREE.Line(vertGeometry, ringMaterial);
+                 globeGroup.add(vertLine);
+            }
+
+            // Parallax Interaction
+            let mouseX = 0;
+            let mouseY = 0;
+            const windowHalfX = window.innerWidth / 2;
+            const windowHalfY = window.innerHeight / 2;
+            
+            document.addEventListener('mousemove', (e) => {
+                mouseX = (e.clientX - windowHalfX) / 8;
+                mouseY = (e.clientY - windowHalfY) / 8;
+            });
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                
+                camera.position.x += (mouseX - camera.position.x) * 0.05;
+                camera.position.y += (-mouseY - camera.position.y) * 0.05;
+                camera.lookAt(scene.position);
+                
+                globeGroup.rotation.y += 0.001;
+                globeGroup.rotation.x = 0.2; 
+                
+                renderer.render(scene, camera);
+            };
+            
+            animate();
+
+            // Resize Handler
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        };
+        init3D();
+
+        // --- Core UI Logic ---
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
+            document.getElementById('back-to-top')?.classList.toggle('show', window.scrollY > 500);
+        });
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    const stat = entry.target.querySelector('.stat-number span') || entry.target.querySelector('.stat-number');
+                    if(stat && !stat.classList.contains('counted')) {
+                        let target = parseInt(stat.getAttribute('data-target'));
+                        if(target) {
+                            let count = 0;
+                            const inc = target / 50;
+                            const interval = setInterval(() => {
+                                count += inc;
+                                if(count >= target) { clearInterval(interval); stat.textContent = target; }
+                                else stat.textContent = Math.floor(count);
+                            }, 30);
+                            stat.classList.add('counted');
+                        }
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+        // Advanced Hover Effect for Bento Cards
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+            });
+        });
+
+        // --- Authentication & View Management ---
+        const loginModal = document.getElementById('employee-login-modal');
+        let isAuthenticated = false;
+
+        document.getElementById('employee-portal-btn')?.addEventListener('click', () => {
+            if(isAuthenticated) showView('tools');
+            else loginModal.classList.remove('hidden');
+            loginModal.classList.add('flex');
+        });
+
+        document.querySelectorAll('.modal-close-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.closest('.modal-overlay').classList.add('hidden');
+                btn.closest('.modal-overlay').classList.remove('flex');
+            });
+        });
+
+        document.getElementById('employee-login-form')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if(document.getElementById('employee-password').value === 'MATRIX2026') {
+                isAuthenticated = true;
+                loginModal.classList.add('hidden');
+                document.querySelectorAll('.employee-only').forEach(el => el.classList.remove('hidden'));
+                showView('tools');
+            } else {
+                const err = document.getElementById('login-error-message');
+                err.textContent = 'ACCESS DENIED'; err.classList.remove('hidden');
+            }
+        });
+
+        const showView = (view) => {
+            window.scrollTo(0, 0);
+            
+            // Hide all views first
+            document.querySelectorAll('.main-view').forEach(v => v.classList.add('hidden-view'));
+            
+            // Show targeted view
+            if(view === 'tools') {
+                document.getElementById('tools-view').classList.remove('hidden-view');
+            } else if (view === 'enterprise') {
+                document.getElementById('enterprise-dashboard-view').classList.remove('hidden-view');
+                initEnterpriseCharts();
+                renderAllDashboard(); 
+            } else {
+                document.getElementById('investor-view').classList.remove('hidden-view');
+            }
+        };
+
+        const initEnterpriseCharts = () => {
+            if (complianceTrendChartInstance && frameworkStatusChartInstance) return;
+            
+            Chart.defaults.color = '#9CA3AF';
+            Chart.defaults.font.family = "'Inter', 'Noto Kufi Arabic', sans-serif";
+            
+            // Line Chart
+            const ctxLine = document.getElementById('complianceTrendChart')?.getContext('2d');
+            if(ctxLine && !complianceTrendChartInstance) {
+                complianceTrendChartInstance = new Chart(ctxLine, {
+                    type: 'line',
+                    data: {
+                        labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+                        datasets: [{
+                            label: 'Overall Readiness %',
+                            data: [...OS_STATE.historyTrend],
+                            borderColor: '#00E5FF',
+                            backgroundColor: 'rgba(0, 229, 255, 0.1)',
+                            borderWidth: 3,
+                            tension: 0.4,
+                            fill: true,
+                            pointBackgroundColor: '#0B1120',
+                            pointBorderColor: '#00E5FF',
+                            pointBorderWidth: 2,
+                            pointRadius: 4,
+                            pointHoverRadius: 6
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            y: { grid: { color: 'rgba(255,255,255,0.05)' }, min: 0, max: 100 },
+                            x: { grid: { display: false } }
+                        }
+                    }
+                });
+            }
+
+            // Doughnut Chart
+            const ctxDoughnut = document.getElementById('frameworkStatusChart')?.getContext('2d');
+            if(ctxDoughnut && !frameworkStatusChartInstance) {
+                frameworkStatusChartInstance = new Chart(ctxDoughnut, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['SAMA', 'CMA', 'SDAIA', 'NCA'],
+                        datasets: [{
+                            data: [
+                                OS_STATE.frameworks.sama,
+                                OS_STATE.frameworks.cma,
+                                OS_STATE.frameworks.sdaia,
+                                OS_STATE.frameworks.nca
+                            ],
+                            backgroundColor: ['#8B5CF6', '#F59E0B', '#10B981', '#3B82F6'],
+                            borderWidth: 0,
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '75%',
+                        plugins: {
+                            legend: { position: 'bottom', labels: { padding: 20, usePointStyle: true, pointStyle: 'circle' } }
+                        }
+                    }
+                });
+            }
+        };
+
+        // --- STATE RENDERING ENGINES ---
+        
+        const updateOverallCalculatedReadiness = () => {
+            const average = Math.round(
+                (OS_STATE.frameworks.sama + 
+                 OS_STATE.frameworks.cma + 
+                 OS_STATE.frameworks.sdaia + 
+                 OS_STATE.frameworks.nca) / 4
+            );
+            OS_STATE.metrics.readiness = average;
+            OS_STATE.historyTrend[5] = average;
+            
+            document.getElementById('kpi-readiness').innerHTML = `${average}<span class="text-2xl text-text-secondary">%</span>`;
+            
+            if (complianceTrendChartInstance) {
+                complianceTrendChartInstance.data.datasets[0].data[5] = average;
+                complianceTrendChartInstance.update();
+            }
+
+            const statusIndicator = document.getElementById('os-status-indicator');
+            if (statusIndicator) {
+                if (average >= 90) {
+                    statusIndicator.textContent = "Fully Compliant";
+                    statusIndicator.className = "text-success-color font-bold text-sm";
+                } else if (average >= 70) {
+                    statusIndicator.textContent = "Partially Compliant";
+                    statusIndicator.className = "text-warning-color font-bold text-sm";
+                } else {
+                    statusIndicator.textContent = "Action Required";
+                    statusIndicator.className = "text-danger-color font-bold text-sm animate-pulse";
+                }
+            }
+        };
+
+        const renderKPIs = () => {
+            document.getElementById('kpi-vulnerabilities').textContent = OS_STATE.metrics.vulnerabilities;
+            document.getElementById('kpi-nca').textContent = OS_STATE.metrics.ncaControls;
+            document.getElementById('kpi-days').textContent = OS_STATE.metrics.samaDays;
+        };
+
+        const renderAuditTrail = () => {
+            const container = document.getElementById('audit-trail-rows');
+            if (!container) return;
+            container.innerHTML = '';
+            
+            OS_STATE.auditTrail.forEach(row => {
+                const colorMap = {
+                    "SDAIA": "bg-accent-primary/20 text-accent-glow",
+                    "SAMA": "bg-purple-500/20 text-purple-400",
+                    "NCA": "bg-blue-500/20 text-blue-400",
+                    "CMA": "bg-warning-color/20 text-warning-color"
+                };
+                
+                const statusColorMap = {
+                    "Completed": "bg-success-color/20 text-success-color border border-success-color/30",
+                    "In Progress": "bg-warning-color/20 text-warning-color border border-warning-color/30",
+                    "Pending Review": "bg-danger-color/20 text-danger-color border border-danger-color/30"
+                };
+
+                const badge = colorMap[row.framework] || "bg-white/10 text-white";
+                const statusBadge = statusColorMap[row.status] || "bg-white/5 text-white";
+
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-white/5 transition-colors border-b border-white/5";
+                tr.innerHTML = `
+                    <td class="p-4 font-mono text-xs">${row.id}</td>
+                    <td class="p-4"><span class="px-2 py-1 rounded text-xs font-bold ${badge}">${row.framework}</span></td>
+                    <td class="p-4 text-gray-300 font-light">${row.desc}</td>
+                    <td class="p-4"><span class="px-2 py-1 rounded-full text-xs font-bold ${statusBadge}">${row.status}</span></td>
+                    <td class="p-4 text-text-secondary text-xs">${row.time}</td>
+                `;
+                container.appendChild(tr);
+            });
+        };
+
+        const renderPolicies = () => {
+            const container = document.getElementById('policies-grid');
+            if (!container) return;
+            container.innerHTML = '';
+
+            OS_STATE.policies.forEach(policy => {
+                const frameworkColor = {
+                    "SAMA": "bg-purple-500/20 text-purple-400",
+                    "SDAIA": "bg-accent-primary/20 text-accent-glow",
+                    "NCA": "bg-blue-500/20 text-blue-400",
+                    "CMA": "bg-warning-color/20 text-warning-color"
+                };
+
+                const statusIndicatorMap = {
+                    "Approved": "bg-success-color shadow-[0_0_8px_#10b981]",
+                    "Under Review": "bg-warning-color",
+                    "Drafting": "bg-danger-color"
+                };
+
+                const badgeClass = frameworkColor[policy.framework] || "bg-white/10";
+                const indicatorClass = statusIndicatorMap[policy.status] || "bg-gray-400";
+
+                const card = document.createElement('div');
+                card.className = "bg-bg-surface border border-border-color rounded-2xl p-6 shadow-xl hover:border-accent-primary/50 transition-all cursor-pointer relative group";
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="px-2 py-1 rounded text-xs font-bold ${badgeClass}">${policy.framework}</span>
+                        <span class="flex h-3 w-3"><span class="${indicatorClass} relative inline-flex rounded-full h-3 w-3"></span></span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">${policy.title}</h4>
+                    <p class="text-sm text-text-secondary mb-4 line-clamp-3 font-light">${policy.desc}</p>
+                    <div class="flex justify-between items-center text-xs text-text-secondary border-t border-white/5 pt-4">
+                        <span>${policy.ver}</span>
+                        <span>Approved: ${policy.updated}</span>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        };
+
+        const renderRisks = () => {
+            const container = document.getElementById('risks-register-container');
+            if (!container) return;
+            container.innerHTML = '';
+
+            OS_STATE.risks.forEach(risk => {
+                const levelColor = {
+                    "Critical": "border-danger-color/30 bg-danger-color/5 text-danger-color",
+                    "High": "border-warning-color/30 bg-warning-color/5 text-warning-color",
+                    "Medium": "border-blue-500/30 bg-blue-500/5 text-blue-400",
+                    "Low": "border-success-color/30 bg-success-color/5 text-success-color"
+                };
+
+                const levelBadge = {
+                    "Critical": "bg-danger-color text-white",
+                    "High": "bg-warning-color text-bg-base",
+                    "Medium": "bg-blue-500 text-white",
+                    "Low": "bg-success-color text-white"
+                };
+
+                const blockClass = levelColor[risk.level] || "border-white/10 bg-white/5";
+                const badgeClass = levelBadge[risk.level] || "bg-white/20";
+
+                const item = document.createElement('div');
+                item.className = `p-4 rounded-xl border ${blockClass} transition-all`;
+                item.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-white font-bold text-sm">${risk.id}: ${risk.title}</h4>
+                        <span class="px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider ${badgeClass}">${risk.level}</span>
+                    </div>
+                    <p class="text-xs text-text-secondary mb-3 font-light">${risk.desc}</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded text-gray-300">Likelihood: ${risk.likelihood} | Impact: ${risk.impact}</span>
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded text-gray-300">Mitigation: ${risk.mitigation}</span>
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded text-gray-400">Owner: ${risk.owner}</span>
+                    </div>
+                `;
+                container.appendChild(item);
+            });
+        };
+
+        const renderRiskMatrixGrid = () => {
+            // Reset count cells
+            for(let l=1; l<=3; l++){
+                for(let i=1; i<=3; i++){
+                    const cell = document.getElementById(`cell-${l}-${i}`);
+                    if (cell) {
+                        cell.querySelector('.count-val').textContent = '0';
+                        cell.classList.remove('shadow-[inset_0_0_15px_rgba(239,68,68,0.25)]', 'border-danger-color/30');
+                    }
+                }
+            }
+
+            // Count occurrences
+            OS_STATE.risks.forEach(risk => {
+                const targetCell = document.getElementById(`cell-${risk.likelihood}-${risk.impact}`);
+                if (targetCell) {
+                    const countSpan = targetCell.querySelector('.count-val');
+                    let currentCount = parseInt(countSpan.textContent);
+                    countSpan.textContent = currentCount + 1;
+                    
+                    // Style active cells
+                    if (risk.likelihood * risk.impact >= 6) {
+                        targetCell.classList.add('shadow-[inset_0_0_15px_rgba(239,68,68,0.25)]', 'border-danger-color/30');
+                    } else if (risk.likelihood * risk.impact >= 3) {
+                        targetCell.classList.add('shadow-[inset_0_0_15px_rgba(245,158,11,0.25)]', 'border-warning-color/30');
+                    } else {
+                        targetCell.classList.add('shadow-[inset_0_0_15px_rgba(16,185,129,0.25)]', 'border-success-color/30');
+                    }
+                }
+            });
+        };
+
+        const renderRemediationTasks = () => {
+            const container = document.getElementById('remediation-tasks-rows');
+            if (!container) return;
+            container.innerHTML = '';
+
+            OS_STATE.tasks.forEach((task, index) => {
+                const tr = document.createElement('tr');
+                tr.className = `hover:bg-white/5 transition-colors ${task.status === 'Completed' ? 'opacity-50' : ''}`;
+                
+                tr.innerHTML = `
+                    <td class="p-4 w-10">
+                        <input type="checkbox" id="task-chk-${task.id}" ${task.status === 'Completed' ? 'checked' : ''} class="task-checkbox-input w-4 h-4 rounded border-gray-600 bg-black text-accent-primary focus:ring-accent-primary cursor-pointer">
+                    </td>
+                    <td class="p-4">
+                        <p class="text-white font-medium ${task.status === 'Completed' ? 'line-through text-gray-400' : ''}">${task.text}</p>
+                        <p class="text-xs text-text-secondary">${task.control}</p>
+                    </td>
+                    <td class="p-4 text-right">
+                        ${task.status === 'Completed' ? 
+                          `<span class="text-xs text-success-color font-bold">Done</span>` : 
+                          `<span class="px-2 py-1 bg-warning-color/20 text-warning-color rounded text-[10px] font-bold uppercase">${task.priority}</span>`
+                        }
+                    </td>
+                `;
+
+                // Handle task checking in realtime simulation
+                const chk = tr.querySelector('.task-checkbox-input');
+                chk.addEventListener('change', (e) => {
+                    const isDone = e.target.checked;
+                    task.status = isDone ? 'Completed' : 'Pending';
+                    
+                    if (task.link && OS_STATE.frameworks[task.link] !== undefined) {
+                        if (isDone) {
+                            OS_STATE.frameworks[task.link] = Math.min(100, OS_STATE.frameworks[task.link] + 10);
+                        } else {
+                            OS_STATE.frameworks[task.link] = Math.max(0, OS_STATE.frameworks[task.link] - 10);
+                        }
+                        
+                        const slider = document.getElementById(`slider-${task.link}`);
+                        if (slider) slider.value = OS_STATE.frameworks[task.link];
+                        
+                        const displayVal = document.getElementById(`val-slider-${task.link}`);
+                        if (displayVal) displayVal.textContent = `${OS_STATE.frameworks[task.link]}%`;
+                    }
+
+                    updateOverallCalculatedReadiness();
+                    renderRemediationTasks();
+                    renderFrameworkProgressBars();
+                    syncChartsWithState();
+                });
+
+                container.appendChild(tr);
+            });
+        };
+
+        const renderFrameworkProgressBars = () => {
+            document.getElementById('progress-text-sama').textContent = `${OS_STATE.frameworks.sama}%`;
+            document.getElementById('progress-bar-sama').style.width = `${OS_STATE.frameworks.sama}%`;
+
+            document.getElementById('progress-text-sdaia').textContent = `${OS_STATE.frameworks.sdaia}%`;
+            document.getElementById('progress-bar-sdaia').style.width = `${OS_STATE.frameworks.sdaia}%`;
+
+            document.getElementById('progress-text-nca').textContent = `${OS_STATE.frameworks.nca}%`;
+            document.getElementById('progress-bar-nca').style.width = `${OS_STATE.frameworks.nca}%`;
+        };
+
+        const renderMilestoneWidget = () => {
+            document.getElementById('milestone-title').textContent = OS_STATE.milestone.title;
+            document.getElementById('milestone-days').innerHTML = `${OS_STATE.milestone.days} <span class="text-xl text-text-secondary font-medium tracking-normal">Days</span>`;
+            document.getElementById('milestone-date').textContent = `Target: ${OS_STATE.milestone.date}`;
+        };
+
+        const syncChartsWithState = () => {
+            if (frameworkStatusChartInstance) {
+                frameworkStatusChartInstance.data.datasets[0].data = [
+                    OS_STATE.frameworks.sama,
+                    OS_STATE.frameworks.cma,
+                    OS_STATE.frameworks.sdaia,
+                    OS_STATE.frameworks.nca
+                ];
+                frameworkStatusChartInstance.update();
+            }
+        };
+
+        const renderAllDashboard = () => {
+            updateOverallCalculatedReadiness();
+            renderKPIs();
+            renderAuditTrail();
+            renderPolicies();
+            renderRisks();
+            renderRiskMatrixGrid();
+            renderRemediationTasks();
+            renderFrameworkProgressBars();
+            renderMilestoneWidget();
+        };
+
+        // --- INTERACTIVE SIMULATION CONTROL DRAWERS & MODALS LOGIC ---
+        const sandboxDrawer = document.getElementById('sandbox-drawer');
+        const openSandboxBtn = document.getElementById('open-sandbox-btn');
+        const closeSandboxBtn = document.getElementById('close-sandbox-btn');
+
+        openSandboxBtn?.addEventListener('click', () => {
+            sandboxDrawer.classList.remove('translate-x-full');
+            
+            document.getElementById('slider-sama').value = OS_STATE.frameworks.sama;
+            document.getElementById('val-slider-sama').textContent = `${OS_STATE.frameworks.sama}%`;
+            
+            document.getElementById('slider-cma').value = OS_STATE.frameworks.cma;
+            document.getElementById('val-slider-cma').textContent = `${OS_STATE.frameworks.cma}%`;
+            
+            document.getElementById('slider-sdaia').value = OS_STATE.frameworks.sdaia;
+            document.getElementById('val-slider-sdaia').textContent = `${OS_STATE.frameworks.sdaia}%`;
+            
+            document.getElementById('slider-nca').value = OS_STATE.frameworks.nca;
+            document.getElementById('val-slider-nca').textContent = `${OS_STATE.frameworks.nca}%`;
+
+            document.getElementById('input-vulnerabilities').value = OS_STATE.metrics.vulnerabilities;
+            document.getElementById('input-days').value = OS_STATE.metrics.samaDays;
+        });
+
+        // FIXED: Ensure the close button works
+        closeSandboxBtn?.addEventListener('click', (e) => {
+            e.preventDefault();
+            sandboxDrawer.classList.add('translate-x-full');
+        });
+
+        const bindSlider = (id, linkKey) => {
+            const slider = document.getElementById(id);
+            const display = document.getElementById(`val-${id}`);
+            if (slider && display) {
+                slider.addEventListener('input', (e) => {
+                    const val = parseInt(e.target.value);
+                    display.textContent = `${val}%`;
+                    OS_STATE.frameworks[linkKey] = val;
+                    
+                    updateOverallCalculatedReadiness();
+                    renderFrameworkProgressBars();
+                    syncChartsWithState();
+                });
+            }
+        };
+        bindSlider('slider-sama', 'sama');
+        bindSlider('slider-cma', 'cma');
+        bindSlider('slider-sdaia', 'sdaia');
+        bindSlider('slider-nca', 'nca');
+
+        document.getElementById('input-vulnerabilities')?.addEventListener('input', (e) => {
+            OS_STATE.metrics.vulnerabilities = parseInt(e.target.value) || 0;
+            renderKPIs();
+        });
+        document.getElementById('input-days')?.addEventListener('input', (e) => {
+            OS_STATE.metrics.samaDays = parseInt(e.target.value) || 0;
+            renderKPIs();
+        });
+
+        document.getElementById('add-policy-btn')?.addEventListener('click', () => {
+            const titleInput = document.getElementById('policy-title');
+            const descInput = document.getElementById('policy-desc');
+            const frameworkSelect = document.getElementById('policy-framework');
+            const statusSelect = document.getElementById('policy-status');
+
+            if (!titleInput.value || !descInput.value) {
+                alert("Please fill in policy title and description details.");
+                return;
+            }
+
+            const newPolicy = {
+                id: `P-${Date.now()}`,
+                framework: frameworkSelect.value,
+                title: titleInput.value,
+                desc: descInput.value,
+                ver: "v1.0.0",
+                status: statusSelect.value,
+                updated: "Just Now"
+            };
+
+            OS_STATE.policies.unshift(newPolicy);
+            renderPolicies();
+
+            titleInput.value = '';
+            descInput.value = '';
+            
+            const auditLog = {
+                id: `POL-GEN-${Math.floor(Math.random()*900 + 100)}`,
+                framework: newPolicy.framework,
+                desc: `Created new Regulatory Policy Draft: "${newPolicy.title}"`,
+                status: "Completed",
+                time: "Just Now"
+            };
+            OS_STATE.auditTrail.unshift(auditLog);
+            renderAuditTrail();
+        });
+
+        document.getElementById('add-policy-trigger')?.addEventListener('click', () => {
+            openSandboxBtn.click();
+            document.getElementById('policy-title').focus();
+        });
+
+        document.getElementById('add-audit-btn')?.addEventListener('click', () => {
+            const auditIdInput = document.getElementById('audit-id');
+            const auditDescInput = document.getElementById('audit-desc');
+            const auditFrameworkSelect = document.getElementById('audit-framework');
+
+            if(!auditIdInput.value || !auditDescInput.value) {
+                alert("Please fill in Audit ID and Description.");
+                return;
+            }
+
+            const newLog = {
+                id: auditIdInput.value,
+                framework: auditFrameworkSelect.value,
+                desc: auditDescInput.value,
+                status: "Completed",
+                time: "Just Now"
+            };
+
+            OS_STATE.auditTrail.unshift(newLog);
+            renderAuditTrail();
+
+            auditIdInput.value = '';
+            auditDescInput.value = '';
+        });
+
+        // --- RISK MODAL INTERACTION ---
+        const addRiskTrigger = document.getElementById('add-risk-trigger');
+        const addRiskModal = document.getElementById('add-risk-modal');
+        
+        addRiskTrigger?.addEventListener('click', () => {
+            addRiskModal.classList.remove('hidden');
+            addRiskModal.classList.add('flex');
+        });
+
+        document.getElementById('save-new-risk-btn')?.addEventListener('click', () => {
+            const riskId = document.getElementById('new-risk-id');
+            const riskTitle = document.getElementById('new-risk-title');
+            const riskDesc = document.getElementById('new-risk-desc');
+            const riskLikelihood = document.getElementById('new-risk-likelihood');
+            const riskImpact = document.getElementById('new-risk-impact');
+            const riskMitigation = document.getElementById('new-risk-mitigation');
+
+            if (!riskId.value || !riskTitle.value) {
+                alert("Please fill in Risk ID and Title.");
+                return;
+            }
+
+            const L = parseInt(riskLikelihood.value);
+            const I = parseInt(riskImpact.value);
+            
+            let severity = "Low";
+            if (L * I >= 6) severity = "Critical";
+            else if (L * I >= 3) severity = "High";
+            else if (L * I >= 2) severity = "Medium";
+
+            const newRisk = {
+                id: riskId.value,
+                title: riskTitle.value,
+                desc: riskDesc.value || "Risk factors currently analyzed dynamically.",
+                level: severity,
+                mitigation: riskMitigation.value || "Dynamic prevention control logs.",
+                owner: "Auditor Desk",
+                likelihood: L,
+                impact: I
+            };
+
+            OS_STATE.risks.unshift(newRisk);
+            renderRisks();
+            renderRiskMatrixGrid();
+
+            addRiskModal.classList.add('hidden');
+            addRiskModal.classList.remove('flex');
+
+            riskId.value = '';
+            riskTitle.value = '';
+            riskDesc.value = '';
+            riskMitigation.value = '';
+        });
+
+        // --- View Navigation & Click Handlers ---
+        document.getElementById('toggle-tools-view-btn')?.addEventListener('click', () => showView('tools'));
+        document.getElementById('toggle-investor-view-btn')?.addEventListener('click', () => showView('investor'));
+        
+        document.getElementById('enterprise-portal-btn')?.addEventListener('click', () => showView('enterprise'));
+        document.getElementById('exit-enterprise-btn')?.addEventListener('click', () => showView('investor'));
+        document.getElementById('exit-enterprise-btn-desktop')?.addEventListener('click', () => showView('investor'));
+
+        const osNavBtns = document.querySelectorAll('.os-nav-btn');
+        const osViews = document.querySelectorAll('.os-content-view');
+        const osHeaderTitle = document.getElementById('os-header-title');
+        const osHeaderDesc = document.getElementById('os-header-desc');
+
+        const osTitles = {
+            'os-overview': { title: 'Fintech Subsidiary <span class="text-text-secondary font-light">| Readiness Board</span>', desc: 'Live tracking of SAMA & SDAIA regulatory implementation.' },
+            'os-policies': { title: 'Regulatory Policies <span class="text-text-secondary font-light">| Management Hub</span>', desc: 'Centralized repository for drafting, reviewing, and approving compliance frameworks.' },
+            'os-risk': { title: 'Risk Heatmap <span class="text-text-secondary font-light">| Enterprise Matrix</span>', desc: 'Inherent and residual compliance risk profiling based on likelihood and impact.' },
+            'os-audit': { title: 'Audit Readiness <span class="text-text-secondary font-light">| Progress Tracker</span>', desc: 'Milestone tracking and critical remediation tasks for regulatory inspections.' }
+        };
+
+        osNavBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const targetId = btn.getAttribute('data-target');
+                
+                osNavBtns.forEach(b => {
+                    b.classList.remove('bg-accent-primary/10', 'text-accent-glow', 'border-accent-primary/20');
+                    b.classList.add('text-text-secondary', 'border-transparent');
+                });
+                btn.classList.remove('text-text-secondary', 'border-transparent');
+                btn.classList.add('bg-accent-primary/10', 'text-accent-glow', 'border-accent-primary/20');
+
+                osViews.forEach(v => {
+                    v.classList.remove('block');
+                    v.classList.add('hidden');
+                });
+                const targetView = document.getElementById(targetId);
+                targetView.classList.remove('hidden');
+                targetView.classList.add('block');
+                
+                targetView.style.opacity = 0;
+                targetView.style.transform = 'translateY(10px)';
+                setTimeout(() => {
+                    targetView.style.transition = 'all 0.4s ease';
+                    targetView.style.opacity = 1;
+                    targetView.style.transform = 'translateY(0)';
+                }, 10);
+
+                if(osTitles[targetId]) {
+                    osHeaderTitle.innerHTML = osTitles[targetId].title;
+                    osHeaderDesc.innerHTML = osTitles[targetId].desc;
+                }
+            });
+        });
+
+        // --- OFFLINE ADVISOR ENGINE LOGIC (المستشار الذكي التفاعلي المستقل) ---
+        const chatContainer = document.getElementById('chat-messages-container');
+        const chatInput = document.getElementById('chat-input');
+        const chatBtn = document.getElementById('chat-send-btn');
+
+        const appendMsg = (text, isUser) => {
+            const div = document.createElement('div');
+            div.className = `flex ${isUser ? 'justify-end' : 'justify-start'}`;
+            
+            // Support raw HTML structures inside Oracle database answers
+            div.innerHTML = `<div class="max-w-[90%] px-5 py-4 text-sm md:text-base leading-relaxed ${isUser ? 'bg-accent-primary text-white rounded-2xl rounded-br-none shadow-lg' : 'bg-white/5 border border-white/10 text-gray-200 rounded-2xl rounded-bl-none'}">${text}</div>`;
+            chatContainer.appendChild(div);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        };
+
+        const showTyping = () => {
+            const div = document.createElement('div');
+            div.id = 'typing-ind'; div.className = 'flex justify-start';
+            div.innerHTML = `<div class="bg-white/5 border border-white/10 px-4 py-3 rounded-2xl rounded-bl-none flex gap-1"><div class="w-2 h-2 bg-accent-glow rounded-full typing-dot"></div><div class="w-2 h-2 bg-accent-glow rounded-full typing-dot"></div><div class="w-2 h-2 bg-accent-glow rounded-full typing-dot"></div></div>`;
+            chatContainer.appendChild(div);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        };
+
+        const executeOfflineAdvisory = (topicKey, displayTitle = null) => {
+            const textQuery = displayTitle || topicKey.toUpperCase();
+            appendMsg(textQuery, true); 
+            showTyping();
+
+            setTimeout(() => {
+                document.getElementById('typing-ind')?.remove();
+                const matchedAnswer = ORACLE_DB[topicKey];
+                if(matchedAnswer) {
+                    appendMsg(matchedAnswer, false);
+                } else {
+                    appendMsg(`
+                        <p class="text-sm">I have processed your query but could not locate a specific matching module in my direct core databases. Please select one of my primary offline intelligence parameters:</p>
+                        <ul class="list-disc pl-5 mt-2 space-y-1 text-xs text-cyan-400 font-semibold">
+                            <li>BNPL Requirements (SAMA)</li>
+                            <li>PDPL Compliance Steps</li>
+                            <li>Setting up a Real Estate Fund</li>
+                            <li>Fees and Penalties</li>
+                            <li>SAMA Cyber Security Framework (CSF) Checklist</li>
+                        </ul>
+                    `, false);
+                }
+            }, 850);
+        };
+
+        // Standard user text input parsing
+        const handleManualChatInput = (inputText) => {
+            if(!inputText) return;
+            const cleanText = inputText.toLowerCase().trim();
+            
+            // Simple keyword routing
+            if(cleanText.includes("bnpl") || cleanText.includes("buy now") || cleanText.includes("pay later") || cleanText.includes("sama requirements")) {
+                executeOfflineAdvisory("bnpl", inputText);
+            } else if(cleanText.includes("pdpl") || cleanText.includes("privacy") || cleanText.includes("data protection") || cleanText.includes("sdaia")) {
+                executeOfflineAdvisory("pdpl", inputText);
+            } else if(cleanText.includes("fund") || cleanText.includes("real estate") || cleanText.includes("reit") || cleanText.includes("cma")) {
+                executeOfflineAdvisory("realestate", inputText);
+            } else if(cleanText.includes("fee") || cleanText.includes("penalty") || cleanText.includes("penalties") || cleanText.includes("fine") || cleanText.includes("fines")) {
+                executeOfflineAdvisory("fees", inputText);
+            } else if(cleanText.includes("security") || cleanText.includes("csf") || cleanText.includes("cyber") || cleanText.includes("nca") || cleanText.includes("checklist")) {
+                executeOfflineAdvisory("csf", inputText);
+            } else {
+                appendMsg(inputText, true);
+                showTyping();
+                setTimeout(() => {
+                    document.getElementById('typing-ind')?.remove();
+                    appendMsg(`
+                        <p class="text-sm font-light">As the offline <span class="text-cyan-400 font-bold">Matrix Oracle</span>, my primary specialized intelligence modules are focused on KSA compliance. You may access any of them instantly by clicking on the permanently pinned chips below.</p>
+                    `, false);
+                }, 700);
+            }
+            chatInput.value = '';
+        };
+
+        // Bind permanent click actions to the static action chips (chips never disappear)
+        document.querySelectorAll('.chat-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                const topicKey = chip.getAttribute('data-topic');
+                const chipText = chip.textContent;
+                executeOfflineAdvisory(topicKey, chipText);
+            });
+        });
+
+        chatBtn?.addEventListener('click', () => handleManualChatInput(chatInput.value.trim()));
+        chatInput?.addEventListener('keypress', (e) => e.key === 'Enter' && handleManualChatInput(chatInput.value.trim()));
+
+        // Welcome Oracle Notification inside the workspace
+        setTimeout(() => {
+            const welcomeDiv = document.createElement('div'); welcomeDiv.className = 'flex justify-start';
+            welcomeDiv.innerHTML = `
+                <div class="max-w-[85%] px-5 py-3 text-sm md:text-base leading-relaxed bg-white/5 border border-white/10 text-gray-200 rounded-2xl rounded-bl-none">
+                    Welcome to Matrix Consult.<br><br>
+                    I am the <strong class="text-cyan-400">Matrix Oracle</strong>. I have loaded SAMA, CMA and SDAIA core legal structures into my offline knowledge repository. Click any of the permanent modules below to instantly read my compliance pathways.
+                </div>
+            `;
+            chatContainer.appendChild(welcomeDiv);
+        }, 300);
+
+        // --- Tools Portal Logic ---
+        const toolsData = [
+            { id: 'policy', title: 'Policy Generator (PDPL/NCA)', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
+            { id: 'contract', title: 'Contract Risk AI', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4' },
+            { id: 'dashboard', title: 'Compliance Dashboard', icon: 'M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z' }
+        ];
+
+        const toolList = document.getElementById('tool-list');
+        const toolDisplay = document.getElementById('tool-display');
+        
+        if(toolList) {
+            toolsData.forEach((t, i) => {
+                const btn = document.createElement('button');
+                btn.className = `w-full text-left p-4 rounded-2xl border transition-all flex items-center gap-4 ${i===0 ? 'bg-white/10 border-accent-primary' : 'bg-transparent border-transparent hover:bg-white/5'}`;
+                btn.innerHTML = `<div class="p-2 rounded-lg bg-accent-primary/20 text-accent-glow"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${t.icon}"/></svg></div><span class="font-medium">${t.title}</span>`;
+                
+                btn.onclick = () => {
+                    toolList.querySelectorAll('button').forEach(b => { b.classList.remove('bg-white/10', 'border-accent-primary'); b.classList.add('bg-transparent', 'border-transparent'); });
+                    btn.classList.remove('bg-transparent', 'border-transparent'); btn.classList.add('bg-white/10', 'border-accent-primary');
+                    
+                    toolDisplay.style.opacity = 0;
+                    setTimeout(() => {
+                        toolDisplay.innerHTML = `<div class="w-16 h-16 rounded-2xl bg-accent-primary/20 flex items-center justify-center text-accent-glow mb-6"><svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${t.icon}"/></svg></div><h3 class="text-3xl font-bold mb-4">${t.title}</h3><p class="text-text-secondary mb-8">Execute specialized AI-driven compliance tasks securely.</p><button class="cta-btn text-sm px-6 py-2" onclick="document.getElementById('${t.id === 'dashboard' ? 'dashboard-portal' : 'generic-tool-portal'}').classList.add('active')">Launch Module</button>`;
+                        toolDisplay.style.opacity = 1;
+                    }, 200);
+                };
+                toolList.appendChild(btn);
+            });
+            toolList.querySelector('button').click();
+        }
+
+        document.querySelectorAll('.portal-close-btn').forEach(btn => {
+            btn.addEventListener('click', () => btn.closest('.portal').classList.remove('active'));
+        });
+
+    });
+</script>
+</body>
+</html>
